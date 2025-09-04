@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 
-export default function DotOverlay() {
+export default function DotOverlay({
+  color
+}) {
   const overlayRef = useRef(null);
 
   useEffect(() => {
@@ -24,7 +26,7 @@ export default function DotOverlay() {
         dot.style.width = `${dotSize}px`;
         dot.style.height = `${dotSize}px`;
         dot.style.borderRadius = "50%";
-        dot.style.background = "#0077B6";
+        dot.style.background = `${color}`;
         dot.style.left = `${x * spacing}px`;
         dot.style.top = `${y * spacing}px`;
         overlay.appendChild(dot);

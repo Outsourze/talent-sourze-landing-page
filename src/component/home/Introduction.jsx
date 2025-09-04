@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const IntroductionHome = () => {
     return (
-        <div className="max-w-7xl py-20 m-auto flex flex-col items-center justify-between
+        <div className="max-w-7xl py-10 m-auto flex flex-col items-center justify-between
             xl:px-0 xl:gap-20 
             lg:px-20 lg:gap-10 
             md:px-20 

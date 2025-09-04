@@ -19,7 +19,7 @@ const benefits = [
 
 const EmpowerHome = () => {
     return (
-        <div className="max-w-7xl w-full py-20 m-auto flex flex-col items-center justify-between
+        <div className="max-w-7xl w-full py-10 m-auto flex flex-col items-center justify-between
             xl:px-0 xl:gap-20 
             lg:px-20 lg:gap-10 
             md:px-20 
@@ -44,7 +44,7 @@ const EmpowerHome = () => {
                 <div className="px-5 w-[40%]">
                     <div className="relative w-full">
                         <div className="w-full h-[450px] relative overflow-hidden -z-30">
-                            <DotOverlay />
+                            <DotOverlay color={"#0077B6"}/>
                         </div>
                         <div className="bg-white absolute bottom-20 -left-10 flex flex-col items-center gap-3 py-5 px-7 border-1 border-gray-200 rounded-2xl">
                             <div className="p-5 rounded-full brand-bg-blue">

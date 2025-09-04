@@ -7,6 +7,7 @@
   --color-brand-blue: #0077B6;
   --color-black: #000000;
   --color-white: #ffffff;
+  --color-slight-white: #F6F6FE;
   --color-gray: #18181B;
   --off-white: #FAFAFA;
   --color-slight-black: #1E1E1F;
@@ -18,7 +19,7 @@
   --primary-text-color: var(--color-black);
 
   /* Base Layout Colors */
-  --background: var(--color-white);
+  --background: var(--color-slight-white);
   --foreground: var(--color-black);
 
   /* Corner radius */
@@ -31,7 +32,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff;
+    --background: #F6F6FE;
     --foreground: #ededed;
   }
 }
