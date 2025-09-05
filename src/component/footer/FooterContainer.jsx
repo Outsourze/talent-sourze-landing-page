@@ -1,5 +1,5 @@
-import CopyRight from "./copyright";
-import FooterIntro from "./Footer-intro";
+import CopyRight from "./Copyright";
+import FooterIntro from "./FooterIntro";
 
 const Footer = () => {
     return (
