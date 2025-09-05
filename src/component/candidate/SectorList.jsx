@@ -51,9 +51,17 @@ const SectorList = () => {
                     <p className="text-lg text-gray-500">Your next career move is here. Explore exciting roles and connect with companies looking for talent like you.</p>
                 </div>
                 <div className="flex justify-between flex-wrap gap-5">
-                    {memoizedSectors.map((sector, index) => (
-                        <JobCard key={index} jobs={sector.jobs} title={sector.name}/>
-                    ))}
+                  {memoizedSectors.length > 0 ? (
+                    memoizedSectors.map((sector, index) => (
+                      <JobCard key={index} jobs={sector.jobs} title={sector.name}/>
+                    ))
+                  ) : (
+                    <div 
+                      className="flex flex-col items-center justify-center p-6 border border-[#0077B6] rounded-2xl shadow-sm text-gray-500 w-full md:w-[300px] mx-auto"
+                    >
+                      <p className="font-semibold">No jobs available yet</p>
+                    </div>
+                  )}
                 </div>
             </div>
         </div>
