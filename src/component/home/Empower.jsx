@@ -25,14 +25,18 @@ const EmpowerHome = () => {
             md:px-20 
             max-md:px-5 max-md:py-10"
         >
-            <div className="px-10 flex items-center w-full justify-between">
-                <div className="flex flex-col items-start gap-8 w-[40%]">
-                    <h1 className="brand-text-gray font-heading font-extrabold text-[3.5rem] mb-10">Empower Your Workforce</h1>
+            <div className="xl:px-10 md:px-5 flex items-center w-full justify-between">
+                <div className="flex flex-col items-start gap-8 
+                xl:w-[40%] lg:w-1/2">
+                    <h1 className="brand-text-gray font-heading font-extrabold 
+                    xl:mb-10 xl:text-[3.5rem] 
+                    lg:mb-5 lg:text-5xl md:text-[3.2rem] ">Empower Your Workforce</h1>
                     <div className="flex flex-col gap-5">
                         {benefits.map((benefit, index) => (
                             <div className="gap-3 flex items-center" key={index}>
                                 <FaCircleCheck className="brand-text-gray" size={16}/>
-                                <p className="brand-text-gray text-lg">{benefit}</p>
+                                <p className="brand-text-gray 
+                                xl:text-lg lg:text-base md:text-lg">{benefit}</p>
                             </div>
                         ))}
                     </div>
@@ -41,7 +45,8 @@ const EmpowerHome = () => {
                       <FiArrowRight size={20}/>
                     </Link>
                 </div>
-                <div className="px-5 w-[40%]">
+                <div className="px-5 
+                xl:w-[40%] lg:w-1/2 lg:block md:hidden max-md:hidden">
                     <div className="relative w-full">
                         <div className="w-full h-[450px] relative overflow-hidden -z-30">
                             <DotOverlay color={"#0077B6"}/>

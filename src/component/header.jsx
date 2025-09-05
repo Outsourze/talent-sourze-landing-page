@@ -18,8 +18,8 @@ const Header = () => {
                   <OutsouzedLogo className="lg:w-52 md:w-36 max-md:w-36"/>
                 </Link>
                 {isDesktop && <DesktopNav />}
-                {/* {isTablet && <TabletNav />}
-                {isMobile && <MobileNav />} */}
+                {isTablet && <DesktopNav />}
+                {isMobile && <MobileNav />}
             </div>
         </div>
     )
