@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "./header";
-import Footer from "@/component/footer/footer-container"
+import Footer from "@/component/footer/FooterContainer"
 import { openSans, raleWay, sourceCode, jakarta } from '../utility/font';
 
 export default function Layout({ children }) {
