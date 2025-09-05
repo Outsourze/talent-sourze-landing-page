@@ -11,7 +11,7 @@ import animatatedProfile3 from "@/assets/images/employer/animated-profile3.png";
 import outlineInside from "@/assets/images/employer/outline-inside.png";
 import outlineOutside from "@/assets/images/employer/outline-outside.png";
 
-const IntroductionEmployer = () => {
+const IntroductionCandidate= () => {
     return (
         <div className="max-w-7xl w-full py-10 m-auto flex flex-col items-center justify-between
             xl:px-0 xl:gap-20 
@@ -19,24 +19,34 @@ const IntroductionEmployer = () => {
             md:px-20 
             max-md:px-5 max-md:py-10"
         >
-            <div className="px-10 flex items-center w-full justify-between">
-                <div className="w-1/2 flex flex-col gap-10">
-                    <h1 className="text-7xl font-heading font-[900] leading-16">Employers</h1>
-                    <p className="text-lg">Your team, only better. Talentsourze makes it easy to find, hire, and retain the right professionals for your company.</p>
+            <div className="flex items-center w-full justify-between
+            xl:px-10 md:px-5 max-md:px-5">
+                <div className="flex flex-col gap-10 
+                md:w-1/2 max-md:w-full max-md:text-center">
+                    <h1 className="font-heading brand-text-gray font-[900]
+                    xl:text-7xl xl:leading-16
+                    lg:text-6xl lg:leading-12 
+                    md:text-5xl max-md:text-5xl">Employer</h1>
+                    <p className="lg:text-lg md:text-base">Your talent deserves the right platform. Discover roles, grow your skills, and unlock your potential with Talentsourze.</p>
                 </div>
-                <div className="px-5 w-[40%]">
+                <div className="px-5 
+                xl:w-[40%] lg:w-1/2 md:w-[50%] max-md:hidden">
                     <div className="relative w-full">
                         <div className="w-full h-[450px] relative overflow-hidden -z-30">
                             <DotOverlay color={"#E4E4E7"}/>
                         </div>
-                        <div className="bg-white absolute top-10 -left-10 flex flex-col items-center gap-3 py-5 px-12 border-1 border-gray-200 rounded-lg">
+                        <div className="bg-white absolute flex flex-col items-center gap-3 py-5 px-12 border-1 border-gray-200 rounded-lg
+                        lg:top-10 lg:-left-10 
+                        md:top-0 md:-left-10">
                             <div className="p-5 rounded-full brand-bg-blue">
                                 <SiGoogleanalytics size={25}/>
                             </div>
                             <h4 className="text-4xl font-semibold brand-text-gray">158</h4>
                             <p className="text-gray-500">Projects</p>
                         </div>
-                        <div className="bg-white absolute bottom-5 left-1/2 transform -translate-x-1/2 flex flex-col gap-5 items-center py-5 px-7 border-1 border-gray-200 rounded-lg">
+                        <div className="bg-white absolute flex flex-col gap-5 items-center py-5 px-7 border-1 border-gray-200 rounded-lg transform 
+                        lg:bottom-5 lg:left-1/2 md:-translate-x-1/2
+                        md:bottom-10 md:left-[60%]">
                             <div className="flex items-center gap-5 border-b border-b-gray-300 pb-5">
                                 <div className="bg-[#B63F00] p-3 rounded-full">
                                     <FaStar size={25}/>
@@ -55,7 +65,9 @@ const IntroductionEmployer = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-white absolute -top-5 -right-2 flex flex-col gap-7 items-start py-10 px-7 border-1 border-gray-200 rounded-lg">
+                        <div className="bg-white absolute flex flex-col gap-7 items-start py-10 px-7 border-1 border-gray-200 rounded-lg
+                        lg:-top-5 lg:-right-2
+                        md:-top-5 md:-right-25">
                             <div className="flex flex-col">
                                 <p className="text-sm text-gray-500">Design System</p>
                                 <h3 className="text-2xl font-semibold">Team Meeting</h3>
@@ -87,4 +99,4 @@ const IntroductionEmployer = () => {
     )
 }
 
-export default IntroductionEmployer;
+export default IntroductionCandidate;

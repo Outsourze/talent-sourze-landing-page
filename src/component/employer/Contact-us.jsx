@@ -39,20 +39,28 @@ const ContactUs = () => {
             md:px-20 
             max-md:px-5 max-md:py-10"
         >
-            <div className="px-10 flex flex-col items-center w-full gap-10">
+            <div className="flex flex-col items-center w-full gap-10
+            xl:px-10 md:px-5 max-md:px-5">
                 <div className="gap-5 flex flex-col w-full">
-                    <h1 className="text-6xl font-heading font-extrabold brand-text-gray">Contact us</h1>
-                    <p className="text-gray-500">With lots of unique blocks, you can easily build a page without coding. Build your next consultancy website within few minutes.</p>
+                    <h1 className="
+                    font-heading font-[900] brand-text-gray 
+                    xl:text-6xl xl:leading-16
+                    lg:text-4xl lg:leading-12 
+                    md:text-4xl max-md:text-4xl">Contact us</h1>
+                    <p className="text-gray-500
+                    md:text-lg max-md:text-base">With lots of unique blocks, you can easily build a page without coding. Build your next consultancy website within few minutes.</p>
                 </div>
-                <div className="flex items-center justify-between w-full">
+                <div className="flex justify-between w-full 
+                md:flex-row md:items-center  
+                max-md:flex-col max-md:items-start max-md:gap-5">
                     {contactData.map((data, index) => (
-                        <div className="flex items-start gap-5">
+                        <div className="flex items-start gap-5 lg:flex-row md:flex-col md:items-center max-md:items-start">
                             <div className="flex p-3 rounded-full bg-white">
                                 {data.icon}
                             </div>
-                            <div className="flex flex-col gap-3">
-                                <h3 className="text-2xl font-extrabold font-heading brand-text-gray">{data.title}</h3>
-                                <div className="text-gray-500 text-lg">
+                            <div className="flex gap-3 md:flex-col max-md:flex-col">
+                                <h3 className="text-2xl font-extrabold font-heading brand-text-gray lg:text-left md:text-center">{data.title}</h3>
+                                <div className="text-gray-500 text-lg flex md:flex-col max-md:flex-row max-md:gap-3 max-sm:gap-2 max-sm:text-sm">
                                     {data.descr}
                                 </div>
                             </div>

@@ -7,7 +7,8 @@ const JobCard = ({
     jobs
 }) => {
     return (
-        <div className="w-[31%] border rounded-4xl pt-10 pb-4 flex flex-col justify-between">
+        <div className="border rounded-4xl pt-10 pb-4 flex flex-col justify-between
+        lg:w-[31%] md:w-[47%] sm:w-[46%] max-sm:w-full">
             <div className="">
                 <div className="relative flex items-center gap-5 px-8 pb-5">
                     <div className="p-4 bg-black rounded-full">

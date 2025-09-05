@@ -7,8 +7,8 @@ const ContactForm = () => {
             max-md:px-5 max-md:py-10"
         >
             <form className="p-10 flex flex-col items-center w-full gap-10 brand-bg-blue rounded-xl">
-              <div className="flex w-full gap-8">
-                <div className="flex flex-col w-1/2 gap-3">
+              <div className="flex w-full max-md:flex-col md:gap-8 max-md:gap-5">
+                <div className="flex flex-col gap-3 md:w-1/2 max-md:w-full">
                   <label className="font-bold font-heading" htmlFor="companyName">Company Name</label>
                   <input 
                     placeholder="i.e. Talentsourze"
@@ -16,7 +16,7 @@ const ContactForm = () => {
                   />
                 </div>
 
-                <div className="flex flex-col w-1/2 gap-3">
+                <div className="flex flex-col gap-3 md:w-1/2 max-md:w-full">
                   <label className="font-bold font-heading" htmlFor="email">Email</label>
                   <input 
                     placeholder="i.e. john@mail.com"
@@ -24,8 +24,12 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-              <div className="flex w-full gap-8">
-                <div className="flex flex-col w-1/3 gap-3">
+              <div className="flex w-full 
+              lg:flex-nowrap lg:gap-8 
+              md:flex-wrap md:gap-5 md:justify-between
+              max-md:flex-col max-md:gap-5">
+                <div className="flex flex-col gap-3
+                lg:w-1/3 md:w-[48%] max-md:w-full">
                   <label className="font-bold font-heading" htmlFor="sector">Sector</label>
                   <input 
                     placeholder="i.e. +1-234-567-7890"
@@ -33,7 +37,8 @@ const ContactForm = () => {
                   />
                 </div>
 
-                <div className="flex flex-col w-1/3 gap-3">
+                <div className="flex flex-col gap-3 
+                lg:w-1/3 md:w-[48%] max-md:w-full">
                   <label className="font-bold font-heading" htmlFor="country">Country</label>
                   <input 
                     placeholder="i.e. +1-234-567-7890"
@@ -41,7 +46,8 @@ const ContactForm = () => {
                   />
                 </div>
 
-                <div className="flex flex-col w-1/3 gap-3">
+                <div className="flex flex-col gap-3 
+                lg:w-1/3 md:w-[48%] max-md:w-full">
                   <label className="font-bold font-heading" htmlFor="numStaffNeed">Number of StaffNeeded</label>
                   <input 
                     placeholder="i.e. john@mail.com"

@@ -22,23 +22,26 @@ const FooterIntro = () => {
                 xl:px-0 lg:px-20 md:px-20 max-md:px-5 max-md:relative "
             >
                 <div className="flex items-center justify-between 
-                lg:flex-row 
-                md:flex-col md:gap-5 lg:text-left md:text-center">
+                lg:flex-row lg:text-left 
+                md:flex-col md:gap-5 md:text-center
+                max-md:flex-col max-md:gap-5 max-md:text-center">
                     <h2 className="font-jakarta
                     lg:w-[40%] lg:text-5xl  
-                    md:w-full md:text-4xl">Where talent meets opportunity.</h2>
+                    md:w-full md:text-4xl max-md:text-2xl ">Where talent meets opportunity.</h2>
                     <FooterSocialMedia 
                         size={"large"}
                         theme={"white"}
                     />
                 </div>
                 <div className="flex items-center justify-between
-                lg:gap-0 md:gap-5">
+                lg:gap-0 
+                md:gap-5
+                max-md:flex-col max-md:gap-5">
                     {contactData.map((data, index) => (
                         <div key={index} className="flex items-center gap-5 py-3 bg-white rounded-full
-                        lg:px-15 md:px-5">
+                        lg:px-15 md:px-5 max-md:w-4/5 max-md:justify-center">
                             {data.icon}
-                            <p className="lg:text-base md:text-sm">{data.text}</p>
+                            <p className="lg:text-base md:text-sm ">{data.text}</p>
                         </div>
                     ))}
                 </div>

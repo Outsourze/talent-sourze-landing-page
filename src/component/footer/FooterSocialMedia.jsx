@@ -9,37 +9,38 @@ const FooterSocialMedia = ({
     size
 }) => {
     const isDesktop = useMediaQuery("(min-width: 768px)");
+    const isMobile = useMediaQuery("(max-width: 468px)");
 
     const socialMediaData = [{
         url: "/",
         icon: 
         <FaFacebookF 
-            size={size === "normal" ? 14 : isDesktop ? 16 : 24}
+            size={size === "normal" ? isMobile ? 10 : 14 : isDesktop ? 16 : 24}
         />
     }, {
         url: "/",
         icon: 
         <FaInstagram 
-            size={size === "normal" ? 14 : isDesktop ? 16 : 24}
+            size={size === "normal" ? isMobile ? 10 : 14 : isDesktop ? 16 : 24}
         />
     }, {
         url: "/",
         icon: 
         <FaXTwitter 
-            size={size === "normal" ? 14 : isDesktop ? 16 : 24}
+            size={size === "normal" ? isMobile ? 10 : 14 : isDesktop ? 16 : 24}
         />
     }, {
         url: "/",
         icon: 
         <FaLinkedinIn 
-            size={size === "normal" ? 14 : isDesktop ? 16 : 24}
+            size={size === "normal" ? isMobile ? 10 : 14 : isDesktop ? 16 : 24}
         />
     }]
 
     return (
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-5 max-md:gap-2">
             {socialMediaData.map((data, index) => (
-                <div key={index} className={`${theme === "black" ? "text-white outline-white p-2 outline" : "text-black outline-black lg:p-5 md:p-3 max-md:p-2 outline-2"}  rounded-full cursor-pointer`}>
+                <div key={index} className={`${theme === "black" ? "text-white outline-white p-2 max-md:p-[5px] outline" : "text-black outline-black lg:p-5 md:p-3 max-md:p-2 outline-2"}  rounded-full cursor-pointer`}>
                    {data.icon}
                 </div>
             ))}
