@@ -40,7 +40,7 @@ const FooterSocialMedia = ({
     return (
         <div className="flex items-center gap-5 max-md:gap-2">
             {socialMediaData.map((data, index) => (
-                <div key={index} className={`${theme === "black" ? "text-white outline-white p-2 max-md:p-[5px] outline" : "text-black outline-black lg:p-5 md:p-3 max-md:p-2 outline-2"}  rounded-full cursor-pointer`}>
+                <div key={index} className={`${theme === "black" ? "text-white outline-white p-2 max-md:p-[5px] outline" : "text-black outline-black lg:p-5 md:p-3 max-md:p-2 outline-2"}  rounded-full cursor-pointer brand-bg-blue`}>
                    {data.icon}
                 </div>
             ))}
