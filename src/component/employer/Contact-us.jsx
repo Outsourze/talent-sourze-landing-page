@@ -1,34 +1,25 @@
-import { MdCall } from "react-icons/md";
-import { MdOutlineMail } from "react-icons/md";
-import { FaLocationDot } from "react-icons/fa6";
+import why1 from "@/assets/images/employer/why1.png";
+import why2 from "@/assets/images/employer/why2.png";
+import why3 from "@/assets/images/employer/why3.png";
+import why4 from "@/assets/images/employer/why4.png";
+import Image from "next/image";
 
-const contactData = [{
-    title: "Call us",
-    descr: (
-        <>
-            <p>+1-234-567-7890</p>
-            <p>+1-234-567-7890</p>
-        </>
-    ),
-    icon: <MdCall size={22} className="brand-text-blue"/>
+const whyUsArr = [{
+    num: "01",
+    title: "Pre-Screened Talent",
+    descr: "Save time and resources. All candidates are vetted by our HR experts before reaching your desk."
 }, {
-    title: "Email us",
-    descr: (
-        <>
-            <p>taletsourze@email</p>
-            <p>talentsourze_hr@emal</p>
-        </>
-    ),
-    icon: <MdOutlineMail size={22} className="brand-text-blue"/>
+    num: "02",
+    title: "Faster Recruitment",
+    descr: "Fill roles quickly with our streamlined process that connects you to job-ready professionals."
 }, {
-    title: "Visit us",
-    descr: (
-        <>
-            <p>Makati,Metro Manila,</p>
-            <p>Philippines, 1201</p>
-        </>
-    ),
-    icon: <FaLocationDot size={22} className="brand-text-blue"/>
+    num: "03",
+    title: "Dedicated HR Support",
+    descr: "Our team manages applications, job postings, and candidate screening so you can focus on your business."
+}, {
+    num: "04",
+    title: "Industry-Wide Expertise",
+    descr: "From healthcare to IT, we cover 9 major industries with the right professionals for your needs."
 }]
 
 const ContactUs = () => {
@@ -39,31 +30,42 @@ const ContactUs = () => {
             md:px-20 
             max-md:px-5 max-md:py-10"
         >
-            <div className="flex flex-col items-center w-full gap-10
-            xl:px-10 md:px-5 max-md:px-5">
-                <div className="gap-5 flex flex-col w-full">
-                    <h1 className="
-                    font-heading font-[900] brand-text-gray 
-                    xl:text-6xl xl:leading-16
-                    lg:text-4xl lg:leading-12 
-                    md:text-4xl max-md:text-4xl">Contact us</h1>
-                    <p className="text-gray-500
-                    md:text-lg max-md:text-base">With lots of unique blocks, you can easily build a page without coding. Build your next consultancy website within few minutes.</p>
+            <div className="flex items-stretch justify-between w-full gap-10
+            xl:px-10 
+            lg:flex-row
+            md:px-5 md:flex-col
+            max-md:px-5 max-md:flex-col">
+                <div className="flex flex-col gap-5
+                    lg:w-[45%] md:w-full">
+                    <h2 className="text-3xl font-heading font-bold">Why Choose Us</h2>
+                    <p className="text-gray-500">Your success depends on the right people. With Talentsourze, you gain a trusted partner that helps you build a strong team and grow your business with confidence.</p>
+                    <div className="gap-2 
+                    lg:flex
+                    md:hidden
+                    max-md:hidden">
+                        <div className="flex flex-col gap-2">
+                            <Image src={why1} alt="why img"/>
+                            <Image src={why2} alt="why img"/>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <Image src={why3} alt="why img"/>
+                            <Image src={why4} alt="why img"/>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex justify-between w-full 
-                md:flex-row md:items-center  
-                max-md:flex-col max-md:items-start max-md:gap-5">
-                    {contactData.map((data, index) => (
-                        <div className="flex items-start gap-5 lg:flex-row md:flex-col md:items-center max-md:items-start">
-                            <div className="flex p-3 rounded-full bg-white">
-                                {data.icon}
+                <div className="flex flex-wrap justify-between 
+                xl:w-[45%] 
+                lg:w-1/2
+                md:w-full md:flex-row
+                max-md:w-full
+                max-sm:flex-col max-sm:gap-3">
+                    {whyUsArr.map((list, index) => (
+                        <div key={index} className="flex flex-col gap-5 items-start md:w-[48%] max-sm:w-full">
+                            <div className="bg-white p-4 rounded-lg shadow-sm">
+                                <p className="font-heading italic brand-text-blue font-bold">{list.num}</p>
                             </div>
-                            <div className="flex gap-3 md:flex-col max-md:flex-col">
-                                <h3 className="text-2xl font-extrabold font-heading brand-text-gray lg:text-left md:text-center">{data.title}</h3>
-                                <div className="text-gray-500 text-lg flex md:flex-col max-md:flex-row max-md:gap-3 max-sm:gap-2 max-sm:text-sm">
-                                    {data.descr}
-                                </div>
-                            </div>
+                            <h3 className="font-heading font-semibold text-3xl">{list.title}</h3>
+                            <p className="text-gray-500">{list.descr}</p>
                         </div>
                     ))}
                 </div>

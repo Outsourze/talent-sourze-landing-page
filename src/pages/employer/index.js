@@ -1,5 +1,5 @@
 import ContactUs from "@/component/employer/Contact-us";
-import ContactForm from "@/component/employer/ContactForm";
+import GetStarted from "@/component/employer/GetStarted";
 import IntroductionEmployer from "@/component/employer/Introduction";
 
 const Employer = () => {
@@ -8,7 +8,7 @@ const Employer = () => {
         lg:gap-20 md:gap-10 max-md:gap-10 max-sm:gap-5">
             <IntroductionEmployer />
             <ContactUs />
-            <ContactForm />
+            <GetStarted />
         </div>
     )
 }
