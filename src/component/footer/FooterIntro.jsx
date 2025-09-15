@@ -20,9 +20,13 @@ const FooterIntro = () => {
     return (
         <div className="bg-[#F9F9FB]">
             <div className="py-15 flex justify-between gap-10 max-w-7xl m-auto 
-                xl:px-0 lg:px-20 md:px-20 max-md:px-5 max-md:relative "
+                xl:px-0 
+                lg:px-20 lg:flex-row 
+                md:px-20 md:flex-col
+                max-md:px-5 max-md:relative max-md:flex-col"
             >
-                <div className="flex flex-col w-[70%] gap-5 text-[#1C1C1C]">
+                <div className="flex flex-col gap-5 text-[#1C1C1C]
+                lg:w-[70%] md:w-full max-md:w-full">
                     <Link href={"/"} aria-label="Outsouzed Home">
                         <OutsouzedLogo className="lg:w-42 md:w-28 max-md:w-24"/>
                     </Link>
@@ -32,7 +36,10 @@ const FooterIntro = () => {
                         <Link className="flex gap-1 items-center px-5 py-2 outline rounded-4xl" href={"/"}><span>Candidate</span> <GoArrowUpRight /></Link>
                     </div>
                 </div>
-                <div className="flex flex-col w-[20%] gap-2 text-[#1C1C1C] font-semibold">
+                <div className="flex flex-col gap-2 text-[#1C1C1C] font-semibold
+                lg:w-[20%]
+                md:w-full 
+                max-md:w-full">
                     <h3 className="font-heading text-2xl font-extrabold">GET IN TOUCH</h3>
                     <p>+63 968 372 4410</p>
                     <p>HELLO@TALENTSOURZE.COM</p>

@@ -27,7 +27,7 @@ const EmpowerHome = () => {
             md:px-20 
             max-md:px-5 max-md:py-10"
         >
-            <div className="xl:px-10 md:px-5 flex items-center w-full justify-between">
+            <div className="flex items-center w-full justify-between">
                 <div className="flex flex-col items-start gap-8 
                 xl:w-[40%] lg:w-1/2">
                     <h1 className="brand-text-gray font-heading font-extrabold 
