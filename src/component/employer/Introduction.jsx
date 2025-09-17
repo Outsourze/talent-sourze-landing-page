@@ -1,4 +1,5 @@
 import DotOverlay from "../ui/DotOverlay";
+import Link from "next/link";
 import { SiGoogleanalytics } from "react-icons/si";
 import { FaStar } from "react-icons/fa";
 import { FaRegComment } from "react-icons/fa6";
@@ -11,23 +12,23 @@ import animatatedProfile3 from "@/assets/images/employer/animated-profile3.png";
 import outlineInside from "@/assets/images/employer/outline-inside.png";
 import outlineOutside from "@/assets/images/employer/outline-outside.png";
 
-const IntroductionCandidate= () => {
+const IntroductionEmployer= () => {
     return (
-        <div className="max-w-7xl w-full py-10 m-auto flex flex-col items-center justify-between
+        <div className="max-w-7xl w-full pt-16 pb-8 m-auto flex flex-col items-center justify-between
             xl:px-0 xl:gap-20 
             lg:px-20 lg:gap-10 
             md:px-20 
             max-md:px-5 max-md:py-10"
         >
-            <div className="flex items-center w-full justify-between
-            xl:px-10 md:px-5 max-md:px-5">
-                <div className="flex flex-col gap-10 
+            <div className="flex items-center w-full justify-between">
+                <div className="flex flex-col items-start gap-10 
                 md:w-1/2 max-md:w-full max-md:text-center">
                     <h1 className="font-heading brand-text-gray font-[900]
                     xl:text-7xl xl:leading-16
                     lg:text-6xl lg:leading-12 
-                    md:text-5xl max-md:text-5xl">Employer</h1>
+                    md:text-5xl max-md:text-5xl">Employers</h1>
                     <p className="lg:text-lg md:text-base">Your talent deserves the right platform. Discover roles, grow your skills, and unlock your potential with Talentsourze.</p>
+                    <Link href={"/"} className="px-5 py-3 font-source rounded-lg brand-bg-blue text-white">Begin Your Journey</Link>
                 </div>
                 <div className="px-5 
                 xl:w-[40%] lg:w-1/2 md:w-[50%] max-md:hidden">
@@ -99,4 +100,4 @@ const IntroductionCandidate= () => {
     )
 }
 
-export default IntroductionCandidate;
+export default IntroductionEmployer;

@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
-import JobCard from "./JobCard";
+import SectorCard from "./SectorCard";
 
 const SectorList = () => {
     const [sectorsData, setSectorsData] = useState([]);
@@ -36,8 +36,6 @@ const SectorList = () => {
 
     if (loading) return <p className="text-center py-10">Loading sectors...</p>;
 
-    console.log({memoizedSectors});
-    
     return (
         <div className="max-w-7xl w-full py-10 m-auto flex flex-col items-center justify-between
             xl:px-0 xl:gap-20 
@@ -59,7 +57,12 @@ const SectorList = () => {
                 sm:flex-wrap max-sm:flex-col">
                   {memoizedSectors.length > 0 ? (
                     memoizedSectors.map((sector, index) => (
-                      <JobCard key={index} jobs={sector.jobs} title={sector.name}/>
+                      <SectorCard 
+                        key={index} 
+                        sectorId={sector.id}
+                        descr={sector.description}
+                        title={sector.name}
+                      />
                     ))
                   ) : (
                     <div 

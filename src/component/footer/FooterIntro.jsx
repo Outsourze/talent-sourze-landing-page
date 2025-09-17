@@ -17,7 +17,7 @@ const contactData = [{
 
 const FooterIntro = () => {
     return (
-        <div className="bg-[#F9F9FB]">
+        <div className="">
             <div className="py-15 flex flex-col gap-10 max-w-7xl m-auto 
                 xl:px-0 lg:px-20 md:px-20 max-md:px-5 max-md:relative "
             >

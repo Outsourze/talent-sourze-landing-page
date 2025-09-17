@@ -13,7 +13,7 @@ import outlineOutside from "@/assets/images/employer/outline-outside.png";
 
 const IntroductionCandidate= () => {
     return (
-        <div className="max-w-7xl w-full py-10 m-auto flex flex-col items-center justify-between
+        <div className="max-w-7xl w-full pt-16 pb-4 m-auto flex flex-col items-center justify-between
             xl:px-0 xl:gap-20 
             lg:px-20 lg:gap-10 
             md:px-20 
