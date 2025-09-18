@@ -1,4 +1,5 @@
-const ContactForm = () => {
+const Form = () => {
+
     return (
         <div className="max-w-7xl w-full py-10 m-auto flex flex-col items-center justify-between
             xl:px-0 xl:gap-20 
@@ -70,4 +71,4 @@ const ContactForm = () => {
     )
 }
 
-export default ContactForm;
+export default Form;
