@@ -1,6 +1,6 @@
-import IntroductionHome from "@/component/home/Introduction";
+import IntroductionHome from "@/component/home/Introduction2";
 import SEO from "@/utility/useSeo";
-import EmpowerHome from "@/component/home/Empower";
+import EmpowerHome from "@/component/home/Empower2";
 import ChooseYourPathHome from "@/component/home/ChooseYourPath";
 
 export default function Home() {

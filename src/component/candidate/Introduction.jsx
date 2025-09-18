@@ -1,98 +1,55 @@
-import DotOverlay from "../ui/DotOverlay";
-import { SiGoogleanalytics } from "react-icons/si";
-import { FaStar } from "react-icons/fa";
-import { FaRegComment } from "react-icons/fa6";
-import { FaLink } from "react-icons/fa6";
-import { MdCall } from "react-icons/md";
 import Image from "next/image";
-import animatatedProfile1 from "@/assets/images/employer/animated-profile1.png";
-import animatatedProfile2 from "@/assets/images/employer/animated-profile2.png";
-import animatatedProfile3 from "@/assets/images/employer/animated-profile3.png";
-import outlineInside from "@/assets/images/employer/outline-inside.png";
-import outlineOutside from "@/assets/images/employer/outline-outside.png";
+import hero1 from "@/assets/images/candidate/hero-1.png";
+import Link from "next/link";
+import { useMediaQuery } from "@/utility/useMediaQuery";
 
 const IntroductionCandidate= () => {
+    const isDesktop = useMediaQuery("(min-width: 1280px)");
+    const isLaptop = useMediaQuery("(min-width: 1024px) and (max-width: 1279px)");
+    const isTablet = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
+    const isMobile = useMediaQuery("(max-width: 767px)");
+
+
     return (
-        <div className="max-w-7xl w-full pt-16 pb-4 m-auto flex flex-col items-center justify-between
-            xl:px-0 xl:gap-20 
-            lg:px-20 lg:gap-10 
-            md:px-20 
+        <div className="max-w-7xl w-full py-10 m-auto flex flex-col items-center justify-between
+            xl:px-0 xl:gap-20 xl:pt-20
+            lg:px-20 lg:gap-10 lg:pt-14
+            md:px-20 md:pt-12
             max-md:px-5 max-md:py-10"
         >
-            <div className="flex items-center w-full justify-between
-            xl:px-10 md:px-5 max-md:px-5">
-                <div className="flex flex-col gap-10 
-                md:w-1/2 max-md:w-full max-md:text-center">
-                    <h1 className="font-heading font-[900] brand-text-gray 
+            <div className="flex items-center w-full justify-between max-md:gap-3">
+                <div className="flex flex-col  items-start
+                    lg:gap-10 md:gap-5 max-md:gap-3
+                    md:w-1/2 max-md:w-full ">
+                    <h1 className="font-heading brand-text-gray font-[900]
                     xl:text-7xl xl:leading-16
                     lg:text-6xl lg:leading-12 
                     md:text-5xl max-md:text-5xl">Candidate</h1>
-                    <p className="lg:text-lg md:text-base">Your talent deserves the right platform. Discover roles, grow your skills, and unlock your potential with Talentsourze.</p>
+                    <p className=" font-bold
+                        lg:text-lg md:text-base max-md:text-sm max-sm:text-xs">Your talent deserves the right platform. Discover roles, grow your skills, and unlock your potential with Talentsourze.</p>
+                    <Link 
+                        href={"/"} 
+                        className="font-source text-white brand-bg-blue rounded-md
+                        md:px-5 md:py-4 md:text-base
+                        max-sm:px-3 max-md:py-2 max-md:text-sm"
+                    >Start Your Career</Link>
                 </div>
-                <div className="px-5 
-                xl:w-[40%] lg:w-1/2 md:w-[50%] max-md:hidden">
-                    <div className="relative w-full">
-                        <div className="w-full h-[450px] relative overflow-hidden -z-30">
-                            <DotOverlay color={"#E4E4E7"}/>
-                        </div>
-                        <div className="bg-white absolute flex flex-col items-center gap-3 py-5 px-12 border-1 border-gray-200 rounded-lg
-                        lg:top-10 lg:-left-10 
-                        md:top-0 md:-left-10">
-                            <div className="p-5 rounded-full brand-bg-blue">
-                                <SiGoogleanalytics size={25}/>
-                            </div>
-                            <h4 className="text-4xl font-semibold brand-text-gray">158</h4>
-                            <p className="text-gray-500">Projects</p>
-                        </div>
-                        <div className="bg-white absolute flex flex-col gap-5 items-center py-5 px-7 border-1 border-gray-200 rounded-lg transform 
-                        lg:bottom-5 lg:left-1/2 md:-translate-x-1/2
-                        md:bottom-10 md:left-[60%]">
-                            <div className="flex items-center gap-5 border-b border-b-gray-300 pb-5">
-                                <div className="bg-[#B63F00] p-3 rounded-full">
-                                    <FaStar size={25}/>
-                                </div>
-                                <p className="font-semibold whitespace-nowrap text-lg brand-text-gray">Task Completed</p>
-                                <p className="brand-text-gray text-xl font-semibold">08</p>
-                            </div>
-                            <div className="flex items-center gap-5">
-                                <div className="flex items-center gap-3">
-                                    <FaRegComment /> 
-                                    <p className="text-xs ">3 comments</p>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <FaLink />
-                                    <p className="text-xs ">cubexdesign.fig</p> 
-                                </div>
-                            </div>
-                        </div>
-                        <div className="bg-white absolute flex flex-col gap-7 items-start py-10 px-7 border-1 border-gray-200 rounded-lg
-                        lg:-top-5 lg:-right-2
-                        md:-top-5 md:-right-25">
-                            <div className="flex flex-col">
-                                <p className="text-sm text-gray-500">Design System</p>
-                                <h3 className="text-2xl font-semibold">Team Meeting</h3>
-                            </div>
-                            <div className="flex items-center">
-                                <div className="w-[30px] h-[30px] bg-amber-50 rounded-full overflow-hidden flex items-center justify-center">
-                                    <Image width={30} height={30} src={animatatedProfile1} alt="profile image"/>
-                                </div>
-                                <div className="w-[30px] h-[30px] bg-amber-50 rounded-full overflow-hidden flex items-center justify-center relative right-1">
-                                    <Image width={30} height={30} src={animatatedProfile2} alt="profile image 2"/>
-                                </div>
-                                <div className="w-[30px] h-[30px] bg-amber-50 rounded-full overflow-hidden flex items-center justify-center relative right-2">
-                                    <Image width={30} height={30} src={animatatedProfile3} alt="profile image 3"/>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-4 outline outline-gray-200 p-2 rounded-full">
-                                <div className="brand-bg-blue px-6 py-2 rounded-4xl ">
-                                    <MdCall size={20} />
-                                </div>
-                                <p className="font-medium font-source tracking-tighter text-sm pr-5">Swipe to Call</p>
-                            </div>
-                            <Image className="absolute top-0 right-0" width={65} height={65} src={outlineInside} alt="outlineInside"/>
-                            <Image className="absolute top-0 right-0" width={45} height={45} src={outlineOutside} alt="outlineOutside"/>
-                        </div>
-                    </div>
+                <div className="px-5 flex justify-end xl:w-[40%] lg:w-1/2 md:w-1/2 max-md:w-1/2">
+                  <div className="relative inline-block">
+                    {/* Overlay (shadow card) */}
+                    <div
+                      className="absolute inset-0 bg-[#D9D9D980] xl:rounded-[2.5rem] md:rounded-[2rem] max-md:rounded-[1rem] max-sm:rounded-[0.8rem] z-0
+                                 translate-x-[-1rem] translate-y-[-1rem]"
+                    />
+                    {/* Image */}
+                    <Image
+                      width={isDesktop ? 423 : isLaptop ? 380 : isTablet ? 300 : 200}
+                      height={isDesktop ? 551 : isLaptop ? 511 : isTablet ? 420 : 300}
+                      src={hero1}
+                      alt="hero1"
+                      className="rounded-2xl relative z-10"
+                    />
+                  </div>
                 </div>
             </div>
         </div>
