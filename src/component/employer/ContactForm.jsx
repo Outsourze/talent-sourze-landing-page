@@ -23,7 +23,7 @@ const ContactForm = () => {
     const fetchSectors = async () => {
       try {
         const { data } = await axios.get(
-          `${process.env.NEXT_PUBLIC_BASE_API}sectors`
+          `${process.env.NEXT_PUBLIC_BASE_API}/sectors`
         );
         setSectors(data);
       } catch (err) {
@@ -38,7 +38,7 @@ const ContactForm = () => {
     setLoadingJobs(true);
     try {
       const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_API}sectors/${sectorId}/jobs`
+        `${process.env.NEXT_PUBLIC_BASE_API}/sectors/${sectorId}/jobs`
       );
       setJobs(data.jobs || []);
     } catch (err) {
@@ -65,7 +65,7 @@ const ContactForm = () => {
       );
 
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_API}employer/recruitment`,
+        `${process.env.NEXT_PUBLIC_BASE_API}/employer/recruitment`,
         payload,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

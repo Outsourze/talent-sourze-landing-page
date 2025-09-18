@@ -22,7 +22,7 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
       payload.append("sectorId", sectorId);
 
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_API}candidate/apply`,
+        `${process.env.NEXT_PUBLIC_BASE_API}/candidate/apply`,
         payload,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

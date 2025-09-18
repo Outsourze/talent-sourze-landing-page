@@ -13,7 +13,7 @@ const SectorList = () => {
                  
         try {
           const { data } = await axios.get(
-            `${process.env.NEXT_PUBLIC_BASE_API}sectors`
+            `${process.env.NEXT_PUBLIC_BASE_API}/sectors`
           );
 
           if (isMounted) setSectorsData(data);

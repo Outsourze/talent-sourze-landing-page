@@ -24,7 +24,7 @@ const Sector = () => {
         const fetchSectorJobs = async () => {
             try {
               const { data } = await axios.get(
-                `${process.env.NEXT_PUBLIC_BASE_API}sectors/${sectorId}/jobs`
+                `${process.env.NEXT_PUBLIC_BASE_API}/sectors/${sectorId}/jobs`
               );
 
               console.log({data});
@@ -60,6 +60,7 @@ const Sector = () => {
           <IntroductionSector 
               sectorTitle={sector.name}
               descr={sector.description}
+              sectorImg={sector.imagePaths}
           />
           <JobList 
             setSelectedJob={setSelectedJob}
