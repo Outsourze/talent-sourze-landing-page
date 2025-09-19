@@ -1,8 +1,12 @@
 import { useState, useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { IoCloseOutline } from "react-icons/io5";
 
-const ContactForm = () => {
+const EmployerForm = ({
+  isFormOpen,
+  setIsFormOpen
+}) => {
   const [sectors, setSectors] = useState([]);
   const [jobs, setJobs] = useState([]);
   const [loadingJobs, setLoadingJobs] = useState(false);
@@ -15,10 +19,8 @@ const ContactForm = () => {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  // Watch sector field for changes
   const selectedSector = watch("sectorId");
 
-  // Fetch sectors once on mount
   useEffect(() => {
     const fetchSectors = async () => {
       try {
@@ -33,7 +35,6 @@ const ContactForm = () => {
     fetchSectors();
   }, []);
 
-  // Fetch jobs when a sector is selected
   const fetchJobs = useCallback(async (sectorId) => {
     setLoadingJobs(true);
     try {
@@ -78,194 +79,204 @@ const ContactForm = () => {
   };
 
   return (
-    <div
-      className="max-w-7xl w-full py-10 pt-24 m-auto flex flex-col items-center justify-between
-        xl:px-0 xl:gap-20 
-        lg:px-20 lg:gap-10 
-        md:px-20 
-        max-md:px-5 max-md:py-10"
-    >
-      <h1 className="text-5xl font-bold">Get in touch with us. We're here to assist you.</h1>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="p-10 flex flex-col items-center w-full gap-10 brand-bg-blue rounded-xl"
-      >
-        {/* Personal Information */}
-        <div className="flex w-full max-md:flex-col md:gap-8 max-md:gap-5">
-          <div className="flex flex-col gap-3 md:w-1/2 max-md:w-full">
-            <label className="font-bold font-heading" htmlFor="fullName">
-              Full Name
-            </label>
-            <input
-              {...register("fullName", { required: "Full name is required" })}
-              placeholder="i.e. John Doe"
-              className="rounded p-2 bg-white"
-            />
-            {errors.fullName && (
-              <span className="text-red-500 text-sm">{errors.fullName.message}</span>
-            )}
-          </div>
-          <div className="flex flex-col gap-3 md:w-1/2 max-md:w-full">
-            <label className="font-bold font-heading" htmlFor="email">
-              Email
-            </label>
-            <input
-              {...register("email", { required: "Email is required" })}
-              placeholder="i.e. john@mail.com"
-              className="rounded p-2 bg-white"
-            />
-            {errors.email && (
-              <span className="text-red-500 text-sm">{errors.email.message}</span>
-            )}
+    <div className="max-w-5xl bg-white w-full py-10 m-auto flex flex-col items-start justify-between px-6 md:px-12 lg:px-16 rounded-lg shadow-md">
+      {/* Header */}
+      <div className="flex justify-between items-center w-full mb-6">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+          Employer Recruitment Request
+        </h1>
+        <IoCloseOutline
+          onClick={() => setIsFormOpen(false)}
+          className="cursor-pointer text-gray-600 hover:text-red-500"
+          size={36}
+        />
+      </div>
+
+      <p className="text-gray-600 mb-6">
+        Fields marked with an asterisk (<span className="text-red-500">*</span>) are required.
+      </p>
+
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8 w-full">
+        {/* --- Section: Contact Info --- */}
+        <div>
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Contact Information</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium mb-1" htmlFor="fullName">
+                Full Name *
+              </label>
+              <input
+                {...register("fullName", { required: "Full name is required" })}
+                placeholder="John Doe"
+                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
+              />
+              {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1" htmlFor="email">
+                Email *
+              </label>
+              <input
+                {...register("email", { required: "Email is required" })}
+                placeholder="john@mail.com"
+                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
+              />
+              {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1" htmlFor="phone">
+                Phone
+              </label>
+              <input
+                {...register("phone")}
+                placeholder="+1 234 567 890"
+                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1" htmlFor="companyName">
+                Company Name
+              </label>
+              <input
+                {...register("companyName")}
+                placeholder="Talentsourze"
+                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
           </div>
         </div>
 
-        <div className="flex w-full max-md:flex-col md:gap-8 max-md:gap-5">
-          <div className="flex flex-col gap-3 md:w-1/2 max-md:w-full">
-            <label className="font-bold font-heading" htmlFor="phone">
-              Phone
-            </label>
-            <input
-              {...register("phone")}
-              placeholder="i.e. +1-234-567-7890"
-              className="rounded p-2 bg-white"
-            />
-          </div>
-          <div className="flex flex-col gap-3 md:w-1/2 max-md:w-full">
-            <label className="font-bold font-heading" htmlFor="companyName">
-              Company Name
-            </label>
-            <input
-              {...register("companyName")}
-              placeholder="i.e. Talentsourze"
-              className="rounded p-2 bg-white"
-            />
-          </div>
-        </div>
-
-        {/* Location */}
-        <div className="flex w-full max-md:flex-col md:gap-8 max-md:gap-5">
-          <div className="flex flex-col gap-3 md:w-1/2 max-md:w-full">
-            <label className="font-bold font-heading" htmlFor="country">
-              Country
-            </label>
-            <input
-              {...register("country")}
-              placeholder="i.e. United States"
-              className="rounded p-2 bg-white"
-            />
-          </div>
-          <div className="flex flex-col gap-3 md:w-1/2 max-md:w-full">
-            <label className="font-bold font-heading" htmlFor="city">
-              City
-            </label>
-            <input
-              {...register("city")}
-              placeholder="i.e. New York"
-              className="rounded p-2 bg-white"
-            />
+        {/* --- Section: Location --- */}
+        <div>
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Location</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium mb-1" htmlFor="country">
+                Country
+              </label>
+              <input
+                {...register("country")}
+                placeholder="United States"
+                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1" htmlFor="city">
+                City
+              </label>
+              <input
+                {...register("city")}
+                placeholder="New York"
+                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
           </div>
         </div>
 
-        {/* Company Details */}
-        <div className="flex w-full max-md:flex-col md:gap-8 max-md:gap-5">
-          <div className="flex flex-col gap-3 md:w-1/2 max-md:w-full">
-            <label className="font-bold font-heading" htmlFor="sectorId">
-              Sector
-            </label>
-            <select
-              {...register("sectorId", { required: "Sector is required" })}
-              className="rounded p-2 bg-white"
-            >
-              <option value="">-- Select Sector --</option>
-              {sectors.map((sector) => (
-                <option key={sector.id} value={sector.id}>
-                  {sector.name}
+        {/* --- Section: Recruitment Details --- */}
+        <div>
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Recruitment Details</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-medium mb-1" htmlFor="sectorId">
+                Sector *
+              </label>
+              <select
+                {...register("sectorId", { required: "Sector is required" })}
+                className="w-full rounded-md border p-2 bg-white"
+              >
+                <option value="">-- Select Sector --</option>
+                {sectors.map((sector) => (
+                  <option key={sector.id} value={sector.id}>
+                    {sector.name}
+                  </option>
+                ))}
+              </select>
+              {errors.sectorId && <p className="text-red-500 text-sm">{errors.sectorId.message}</p>}
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1" htmlFor="jobId">
+                Job Role / Position *
+              </label>
+              <select
+                {...register("jobId", { required: "Job role is required" })}
+                className="w-full rounded-md border p-2 bg-white"
+                disabled={!selectedSector || loadingJobs}
+              >
+                <option value="">
+                  {loadingJobs ? "Loading jobs..." : "-- Select Job --"}
                 </option>
-              ))}
-            </select>
-            {errors.sectorId && (
-              <span className="text-red-500 text-sm">{errors.sectorId.message}</span>
-            )}
-          </div>
-          <div className="flex flex-col gap-3 md:w-1/2 max-md:w-full">
-            <label className="font-bold font-heading" htmlFor="jobId">
-              Job Roles / Positions
-            </label>
-            <select
-              {...register("jobId", { required: "Job role is required" })}
-              className="rounded p-2 bg-white"
-              disabled={!selectedSector || loadingJobs}
-            >
-              <option value="">
-                {loadingJobs ? "Loading jobs..." : "-- Select Job --"}
-              </option>
-              {jobs.map((job) => (
-                <option key={job.id} value={job.id}>
-                  {job.title}
-                </option>
-              ))}
-            </select>
-            {errors.jobId && (
-              <span className="text-red-500 text-sm">{errors.jobId.message}</span>
-            )}
-          </div>
-        </div>
-
-        {/* Hiring Details */}
-        <div className="flex w-full max-md:flex-col md:gap-8 max-md:gap-5">
-          <div className="flex flex-col gap-3 md:w-1/2 max-md:w-full">
-            <label className="font-bold font-heading" htmlFor="staffNeeded">
-              Staff Needed
-            </label>
-            <input
-              {...register("staffNeeded")}
-              placeholder="i.e. 10 hires"
-              className="rounded p-2 bg-white"
-            />
-          </div>
-
-          <div className="flex flex-col gap-3 md:w-1/2 max-md:w-full">
-            <label className="font-bold font-heading" htmlFor="startDate">
-              Expected Start Date
-            </label>
-            <input type="date" {...register("startDate")} className="rounded p-2 bg-white" />
+                {jobs.map((job) => (
+                  <option key={job.id} value={job.id}>
+                    {job.title}
+                  </option>
+                ))}
+              </select>
+              {errors.jobId && <p className="text-red-500 text-sm">{errors.jobId.message}</p>}
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1" htmlFor="staffNeeded">
+                Staff Needed
+              </label>
+              <input
+                {...register("staffNeeded")}
+                placeholder="10 hires"
+                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1" htmlFor="startDate">
+                Expected Start Date
+              </label>
+              <input
+                type="date"
+                {...register("startDate")}
+                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
           </div>
         </div>
 
-        {/* Additional Details */}
-        <div className="flex flex-col w-full gap-3">
-          <label className="font-bold font-heading" htmlFor="budget">
-            Budget / Salary Range
-          </label>
-          <input
-            {...register("budget")}
-            placeholder="i.e. $40,000 - $60,000"
-            className="rounded p-2 bg-white"
-          />
+        {/* --- Section: Budget & Notes --- */}
+        <div>
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Additional Details</h2>
+          <div className="grid gap-6">
+            <div>
+              <label className="block text-sm font-medium mb-1" htmlFor="budget">
+                Budget / Salary Range
+              </label>
+              <input
+                {...register("budget")}
+                placeholder="$40,000 - $60,000"
+                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-1" htmlFor="notes">
+                Additional Notes
+              </label>
+              <textarea
+                {...register("notes")}
+                placeholder="Enter additional requirements or notes here..."
+                className="w-full rounded-md border p-3 bg-white h-32 focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="flex flex-col w-full gap-3">
-          <label className="font-bold font-heading" htmlFor="notes">
-            Additional Message / Notes
-          </label>
-          <textarea
-            {...register("notes")}
-            placeholder="Enter additional requirements or notes here..."
-            className="rounded p-2 bg-white h-32"
-          />
+        {/* Submit */}
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="bg-blue-600 hover:bg-blue-700 transition px-10 py-3 text-white rounded-lg font-medium disabled:opacity-50"
+          >
+            {isSubmitting ? "Submitting..." : "Send Request"}
+          </button>
         </div>
-
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="bg-[#1C1C1C] px-20 py-4 text-white rounded-lg font-source disabled:opacity-50"
-        >
-          {isSubmitting ? "Submitting..." : "Send"}
-        </button>
       </form>
     </div>
   );
 };
 
-export default ContactForm;
+export default EmployerForm;
