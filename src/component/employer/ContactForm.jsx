@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { IoCloseOutline } from "react-icons/io5";
+import DatePickerInput from "../ui/datepicker";
 
 const EmployerForm = ({
   isFormOpen,
@@ -16,6 +17,7 @@ const EmployerForm = ({
     handleSubmit,
     reset,
     watch,
+    control,
     formState: { errors, isSubmitting },
   } = useForm();
 
@@ -70,13 +72,16 @@ const EmployerForm = ({
         payload,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
-      console.log(res);
+      console.log({res});
       reset();
     } catch (err) {
-      console.error(err);
+      console.error({err});
       alert("Failed to submit. Please try again.");
     }
   };
+
+  console.log({errors});
+  
 
   return (
     <div className="max-w-5xl bg-white w-full py-10 m-auto flex flex-col items-start justify-between px-6 md:px-12 lg:px-16 rounded-lg shadow-md">
@@ -125,23 +130,25 @@ const EmployerForm = ({
             </div>
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="phone">
-                Phone
+                Phone *
               </label>
               <input
-                {...register("phone")}
+                {...register("phone", { required: "Phone is required"})}
                 placeholder="+1 234 567 890"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />
+              {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="companyName">
                 Company Name
               </label>
               <input
-                {...register("companyName")}
+                {...register("companyName", { required: "Company name is required"})}
                 placeholder="Talentsourze"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />
+              {errors.companyName && <p className="text-red-500 text-sm">{errors.companyName.message}</p>}
             </div>
           </div>
         </div>
@@ -155,20 +162,22 @@ const EmployerForm = ({
                 Country
               </label>
               <input
-                {...register("country")}
+                {...register("country", { required: "Country name is required"})}
                 placeholder="United States"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />
+              {errors.country && <p className="text-red-500 text-sm">{errors.country.message}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="city">
                 City
               </label>
               <input
-                {...register("city")}
+                {...register("city", {required: "City is required" })}
                 placeholder="New York"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />
+              {errors.city && <p className="text-red-500 text-sm">{errors.city.message}</p>}
             </div>
           </div>
         </div>
@@ -179,11 +188,11 @@ const EmployerForm = ({
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="sectorId">
-                Sector *
+                Sector <span className="text-red-500">*</span>
               </label>
               <select
                 {...register("sectorId", { required: "Sector is required" })}
-                className="w-full rounded-md border p-2 bg-white"
+                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
               >
                 <option value="">-- Select Sector --</option>
                 {sectors.map((sector) => (
@@ -192,19 +201,26 @@ const EmployerForm = ({
                   </option>
                 ))}
               </select>
-              {errors.sectorId && <p className="text-red-500 text-sm">{errors.sectorId.message}</p>}
+              {errors.sectorId && (
+                <p className="text-red-500 text-sm mt-1">{errors.sectorId.message}</p>
+              )}
             </div>
+            
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="jobId">
-                Job Role / Position *
+                Job Role / Position <span className="text-red-500">*</span>
               </label>
               <select
                 {...register("jobId", { required: "Job role is required" })}
-                className="w-full rounded-md border p-2 bg-white"
+                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
                 disabled={!selectedSector || loadingJobs}
               >
                 <option value="">
-                  {loadingJobs ? "Loading jobs..." : "-- Select Job --"}
+                  {loadingJobs
+                    ? "Loading jobs..."
+                    : !selectedSector
+                    ? "Select sector first"
+                    : "-- Select Job --"}
                 </option>
                 {jobs.map((job) => (
                   <option key={job.id} value={job.id}>
@@ -212,28 +228,28 @@ const EmployerForm = ({
                   </option>
                 ))}
               </select>
-              {errors.jobId && <p className="text-red-500 text-sm">{errors.jobId.message}</p>}
+              {errors.jobId && (
+                <p className="text-red-500 text-sm mt-1">{errors.jobId.message}</p>
+              )}
             </div>
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="staffNeeded">
                 Staff Needed
               </label>
               <input
-                {...register("staffNeeded")}
+                {...register("staffNeeded", { required: "Staff is required" })}
                 placeholder="10 hires"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />
+              {errors.staffNeeded && <p className="text-red-500 text-sm">{errors.staffNeeded.message}</p>}
             </div>
-            <div>
-              <label className="block text-sm font-medium mb-1" htmlFor="startDate">
-                Expected Start Date
-              </label>
-              <input
-                type="date"
-                {...register("startDate")}
-                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+            <DatePickerInput
+              label="Expected Start Date"
+              name="startDate"
+              control={control}         // comes from useForm()
+              required                  // adds "is required" validation
+              error={errors.startDate}  // shows error message
+            />
           </div>
         </div>
 
@@ -246,10 +262,11 @@ const EmployerForm = ({
                 Budget / Salary Range
               </label>
               <input
-                {...register("budget")}
+                {...register("budget", { required:"Salary is Required" })}
                 placeholder="$40,000 - $60,000"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />
+              {errors.budget && <p className="text-red-500 text-sm">{errors.budget.message}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="notes">
