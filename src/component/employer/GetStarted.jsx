@@ -10,9 +10,12 @@ const GetStarted = ({
             md:px-20 
             max-md:px-5 max-md:py-10"
         >
-            <div className="w-full rounded-4xl brand-bg-blue flex flex-col justify-center items-center gap-5 min-h-96">
-                <h1 className="font-heading text-4xl text-white font-bold">Your Recruitment Partner for Every Industry.</h1>
-                <p className="text-lg text-white">From job posting to candidate screening, our HR team handles the process—making hiring simple and efficient.</p>
+            <div className="w-full rounded-4xl brand-bg-blue flex flex-col justify-center items-center gap-5 max-md:text-center px-5 
+                md:min-h-96 max-md:min-h-80">
+                <h1 className="font-heading text-white font-bold
+                    lg:text-4xl md:text-3xl max-md:text-2xl">Your Recruitment Partner for Every Industry.</h1>
+                <p className="text-white
+                    md:text-lg max-md:text-base">From job posting to candidate screening, our HR team handles the process—making hiring simple and efficient.</p>
                 <button onClick={() => setIsFormOpen(true)} className="px-5 py-3 font-source rounded-lg bg-[#1C1C1C] text-white">Get Started</button>
             </div>
         </div>

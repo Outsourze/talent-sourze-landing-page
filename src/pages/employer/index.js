@@ -4,6 +4,7 @@ import WhyUs from "@/component/employer/WhyChooseUs";
 import ContactForm from "@/component/employer/ContactForm";
 import Modal from "@/component/ui/modal";
 import { useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 const Employer = () => {
     const [isFormOpen, setIsFormOpen] = useState(false);
@@ -23,6 +24,9 @@ const Employer = () => {
                   />
                 </Modal>
             )}
+            <ToastContainer 
+              position="bottom-right"
+            />
         </div>
     )
 }

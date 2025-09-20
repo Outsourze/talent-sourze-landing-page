@@ -1,12 +1,15 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { IoCloseOutline } from "react-icons/io5";
+import DatePickerInput from "../ui/datepicker";
+import toastNotif from "../ui/ToastNotif";
 
 const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
   const {
     register,
     handleSubmit,
     reset,
+    control,
     formState: { errors, isSubmitting },
   } = useForm();
 
@@ -26,8 +29,10 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
         payload,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
-      console.log({ res });
+
       reset();
+      setSelectedJob({ id: null, title: "" })
+      toastNotif({ text: "Application submitted 👌"});
     } catch (err) {
       console.error(err);
       alert("Failed to submit. Please try again.");
@@ -37,8 +42,8 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
   return (
     <div className="max-w-5xl bg-white w-full py-10 m-auto flex flex-col items-start justify-between px-6 md:px-12 lg:px-16 rounded-lg shadow-md">
       {/* Header */}
-      <div className="flex justify-between items-center w-full mb-6">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+      <div className="flex justify-between w-full mb-6 md:items-center max-md:items-start">
+        <h1 className="text-3xl md:text-4xl max-md:text-2xl font-bold text-gray-800">
           Application for <span className="brand-text-blue">{selectedJob.title}</span>
         </h1>
         <IoCloseOutline
@@ -80,7 +85,13 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
               </label>
               <input
                 type="email"
-                {...register("email", { required: "Email is required" })}
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // simple email regex
+                    message: "Please enter a valid email address"
+                  }
+                })}
                 placeholder="john@mail.com"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />
@@ -99,16 +110,13 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
               {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
             </div>
             {/* DOB */}
-            <div>
-              <label className="block text-sm font-medium mb-1" htmlFor="dateOfBirth">
-                Date of Birth *
-              </label>
-              <input
-                type="date"
-                {...register("dateOfBirth", { required: "Date of Birth is required" })}
-                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+            <DatePickerInput
+              label="Date of Birth *"
+              name="dateOfBirth"
+              control={control}         // comes from useForm()
+              required                  // adds "is required" validation
+              error={errors.dateOfBirth}  // shows error message
+            />
           </div>
         </div>
 
@@ -125,6 +133,7 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
                 placeholder="United States"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />
+              {errors.country && <p className="text-red-500 text-sm">{errors.country.message}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="city">
@@ -135,25 +144,27 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
                 placeholder="New York"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />
+              {errors.city && <p className="text-red-500 text-sm">{errors.city.message}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="gender">
-                Gender (optional)
+                Gender *
               </label>
-              <select {...register("gender")} className="w-full rounded-md border p-2 bg-white">
+              <select {...register("gender", { required: "Select gender" })} className="w-full rounded-md border p-2 bg-white">
                 <option value="">Select</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
                 <option value="prefer_not">Prefer not to say</option>
               </select>
+              {errors.gender && <p className="text-red-500 text-sm">{errors.gender.message}</p>}
             </div>
           </div>
         </div>
 
         {/* --- Section: Education & Experience --- */}
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Education & Experience</h2>
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Education & Experience *</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="educationBackground">
@@ -164,6 +175,7 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
                 placeholder="B.Sc. in Computer Science"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />
+              {errors.educationBackground && <p className="text-red-500 text-sm">{errors.educationBackground.message}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="yearsOfExperience">
@@ -175,6 +187,7 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
                 placeholder="5"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />
+              {errors.yearsOfExperience && <p className="text-red-500 text-sm">{errors.yearsOfExperience.message}</p>}
             </div>
           </div>
         </div>
@@ -192,17 +205,15 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
                 placeholder="$50,000"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />
+              {errors.expectedSalary && <p className="text-red-500 text-sm">{errors.expectedSalary.message}</p>}
             </div>
-            <div>
-              <label className="block text-sm font-medium mb-1" htmlFor="availabilityDate">
-                Availability Date *
-              </label>
-              <input
-                type="date"
-                {...register("availabilityDate", { required: "Availability date is required" })}
-                className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+            <DatePickerInput
+              label="Availability Date"
+              name="availabilityDate"
+              control={control}         // comes from useForm()
+              required                  // adds "is required" validation
+              error={errors.availabilityDate}  // shows error message
+            />
           </div>
         </div>
 

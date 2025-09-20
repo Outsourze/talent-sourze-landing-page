@@ -5,6 +5,7 @@ import IntroductionSector from "@/component/sector/Introduction";
 import JobList from "@/component/sector/JobList";
 import Modal from "@/component/ui/modal";
 import ContactForm from "@/component/candidate/ContactForm";
+import { ToastContainer } from 'react-toastify';
 
 const Sector = () => {
     const router = useRouter();
@@ -75,6 +76,9 @@ const Sector = () => {
               />
             </Modal>
           )}
+          <ToastContainer 
+            position="bottom-right"
+          />
         </div>
     )
 }

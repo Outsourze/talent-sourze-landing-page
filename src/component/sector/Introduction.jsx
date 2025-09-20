@@ -15,14 +15,21 @@ const IntroductionSector= ({
                 md:px-20 
                 max-md:px-5 max-md:py-10"
             >
-                <div className="px-10 py-5 flex gap-5 items-center w-full justify-between">
-                    <div className="w-1/2 flex flex-col gap-5">
+                <div className="flex gap-5 items-center w-full justify-between py-5 
+                  xl:px-10 
+                  lg:px-0">
+                    <div className="w-1/2 flex flex-col md:gap-5 max-md:gap-3 max-sm:gap-2">
                         <p className="brand-text-blue text-sm font-jakarta">Get Success Together!</p>
-                        <h1 className="brand-text-gray text-7xl font-heading font-extrabold">{sectorTitle}</h1>
-                        <p className="text-gray-500">{descr}</p>
+                        <h1 className="brand-text-gray font-heading font-extrabold 
+                          xl:text-7xl lg:text-6xl md:text-4xl max-md:text-3xl max-sm:text-2xl max-sm:leading-7">{sectorTitle}</h1>
+                        <p className="text-gray-500 md:text-base max-md:text-sm max-sm:text-xs">{descr}</p>
                     </div>
                     <div className="w-1/2 flex gap-5 py-5">
-                      <div className="relative w-[256px] h-[360px] bg-blue-50 rounded-2xl overflow-hidden -translate-y-5">
+                      <div className="relative bg-blue-50 rounded-2xl overflow-hidden -translate-y-5
+                        lg:w-[256px] lg:h-[360px]
+                        md:w-[186px] md:h-[240px]
+                        max-md:w-[136px] max-md:h-[190px]
+                        max-sm:w-[106px] max-sm:h-[150px]">
                         <Image
                           alt="sector img"
                           src={`${process.env.NEXT_PUBLIC_BASE_API}${sectorImg[0]}`}
@@ -31,7 +38,11 @@ const IntroductionSector= ({
                         />
                       </div>
 
-                      <div className="relative w-[256px] h-[360px] bg-blue-50 rounded-2xl overflow-hidden translate-y-5">
+                      <div className="relative bg-blue-50 rounded-2xl overflow-hidden translate-y-5
+                        lg:w-[256px] lg:h-[360px]
+                        md:w-[186px] md:h-[240px]
+                        max-md:w-[136px] max-md:h-[190px]
+                        max-sm:w-[106px] max-sm:h-[150px]">
                         <Image
                           alt="sector img"
                           src={`${process.env.NEXT_PUBLIC_BASE_API}${sectorImg[1]}`}

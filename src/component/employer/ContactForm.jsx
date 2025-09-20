@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { IoCloseOutline } from "react-icons/io5";
 import DatePickerInput from "../ui/datepicker";
+import toastNotif from "../ui/ToastNotif";
 
 const EmployerForm = ({
   isFormOpen,
@@ -72,8 +73,10 @@ const EmployerForm = ({
         payload,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
-      console.log({res});
+
       reset();
+      setIsFormOpen(false);
+      toastNotif({ text: "Your request has been received ✅"});
     } catch (err) {
       console.error({err});
       alert("Failed to submit. Please try again.");
@@ -87,7 +90,7 @@ const EmployerForm = ({
     <div className="max-w-5xl bg-white w-full py-10 m-auto flex flex-col items-start justify-between px-6 md:px-12 lg:px-16 rounded-lg shadow-md">
       {/* Header */}
       <div className="flex justify-between items-center w-full mb-6">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
+        <h1 className="md:text-4xl max-md:text-2xl font-bold text-gray-800">
           Employer Recruitment Request
         </h1>
         <IoCloseOutline
@@ -122,7 +125,13 @@ const EmployerForm = ({
                 Email *
               </label>
               <input
-                {...register("email", { required: "Email is required" })}
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // simple email regex
+                    message: "Please enter a valid email address"
+                  }
+                })}
                 placeholder="john@mail.com"
                 className="w-full rounded-md border p-2 bg-white focus:ring-2 focus:ring-blue-500"
               />

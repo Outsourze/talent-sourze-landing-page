@@ -43,8 +43,7 @@ const SectorList = () => {
             md:px-20 
             max-md:px-5 max-md:py-10"
         >
-            <div className="flex flex-col w-full gap-10
-            xl:px-10 md:px-5 max-md:px-5">
+            <div className="flex flex-col w-full gap-10">
                 <div className="flex flex-col gap-5">
                     <h1 className="font-heading font-[900] brand-text-gray 
                     xl:text-5xl xl:leading-16

@@ -31,10 +31,9 @@ const ContactUs = () => {
             max-md:px-5 max-md:py-10"
         >
             <div className="flex items-stretch justify-between w-full gap-10
-            xl:px-10 
-            lg:flex-row
-            md:px-5 md:flex-col
-            max-md:px-5 max-md:flex-col">
+                lg:flex-row
+                md:flex-col
+                max-md:flex-col">
                 <div className="flex flex-col gap-5
                     lg:w-[45%] md:w-full">
                     <h2 className="text-3xl font-heading font-bold">Why Choose Us</h2>

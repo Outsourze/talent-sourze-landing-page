@@ -13,7 +13,7 @@ const JobList = ({
                 md:px-20 
                 max-md:px-5 max-md:py-10"
             >
-                <div className="px-10 flex flex-wrap gap-5 items-stretch w-full justify-between">
+                <div className="flex flex-wrap gap-5 items-stretch w-full justify-between">
                     {jobList.map((list, index) => (
                         <JobCard 
                             key={index}
