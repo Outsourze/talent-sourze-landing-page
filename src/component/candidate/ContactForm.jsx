@@ -16,9 +16,14 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
   const onSubmit = async (data) => {
     try {
       const payload = new FormData();
-      Object.entries(data).forEach(([key, value]) =>
-        payload.append(key, value)
-      );
+      Object.entries(data).forEach(([key, value]) => {
+      if (value instanceof FileList) {
+          // take the first file from FileList
+          payload.append(key, value[0]);
+        } else {
+          payload.append(key, value);
+        }
+      });
 
       // append custom fields (not from the form)
       payload.append("jobId", selectedJob?.id);
@@ -218,7 +223,7 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
         </div>
 
         {/* --- Section: Resume --- */}
-        {/* <div>
+        <div>
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Attachments</h2>
           <div>
             <label className="block text-sm font-medium mb-1" htmlFor="resume">
@@ -229,8 +234,9 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
               {...register("resume", { required: "Resume is required" })}
               className="w-full rounded-md border p-2 bg-white"
             />
+            {errors.resume && <p className="text-red-500 text-sm">{errors.resume.message}</p>}
           </div>
-        </div> */}
+        </div>
 
         {/* --- Section: Links --- */}
         <div>
