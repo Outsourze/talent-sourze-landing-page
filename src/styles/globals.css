@@ -1,26 +1,104 @@
 @import "tailwindcss";
+@tailwind utilities;
 
+/* === Design Tokens / Brand Theme === */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Brand Colors */
+  --color-brand-blue: #0077B6;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-slight-white: #F6F6FE;
+  --color-gray: #18181B;
+  --off-white: #FAFAFA;
+  --color-slight-black: #1E1E1F;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* border */
+  --border-black: #010205;
+
+  /* Text color */
+  --primary-text-color: var(--color-black);
+
+  /* Base Layout Colors */
+  --background: var(--color-slight-white);
+  --foreground: var(--color-black);
+
+  /* Corner radius */
+  --radius: 1rem;
+
+  /* shadow */
+  --menu-shadow: 0px 0px 11px rgba(0, 0, 0, 0.08);
+  --text-shadow-heading: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #F6F6FE;
     --foreground: #ededed;
   }
 }
 
+/* === Base Styles === */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--primary-text-color);
+}
+
+@layer utilities {
+  /* font family */
+  .font-source {
+    font-family: var(--font-source);
+  }
+
+  .font-heading {
+    font-family: var(--font-raleway);
+  }
+
+  .font-jakarta {
+    font-family: var(--font-jakarta);
+  }
+
+  .main-container {
+    font-family: var(--font-inter);
+  }
+  /*  */
+
+  .shadow-menu {
+    box-shadow: var(--menu-shadow);
+  }
+
+  .text-shadow-heading {
+    text-shadow: var(--text-shadow-heading);
+  }
+
+  .brand-bg-blue {
+    background-color: var(--color-brand-blue);
+  }
+
+  .brand-text-blue {
+    color: var(--color-brand-blue);
+  }
+
+  .brand-text-gray {
+    color: var(--color-gray);
+  }
+
+  .brand-bg-offwhite {
+    background-color: var(--off-white);
+  }
+
+  .card-bg-slight-black {
+    background-color: var(--color-slight-black);
+  }
+
+  .footer-getstarted-banner-bg {
+    background-color: #020609;
+  }
+
+  .mask-spotlight {
+    mask-image: radial-gradient(circle at center, transparent 80px, black 150px);
+    -webkit-mask-image: radial-gradient(circle at center, transparent 80px, black 150px);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: cover;
+  }
 }
