@@ -5,6 +5,8 @@ const IntroductionSector= ({
     descr,
     sectorImg
 }) => {
+  console.log({sectorImg});
+  
 
 
     return (

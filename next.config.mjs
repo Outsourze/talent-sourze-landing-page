@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost"], // 👈 allow localhost:4000 images
+    domains: ["localhost", "api.talentsourze.com"], // 👈 allow localhost:4000 images
     // or use remotePatterns if you want more control:
     // remotePatterns: [
     //   {
