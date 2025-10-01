@@ -74,6 +74,8 @@ const EmployerForm = ({
         { headers: { "Content-Type": "multipart/form-data" } }
       );
 
+      console.log({res});
+      
       reset();
       setIsFormOpen(false);
       toastNotif({ text: "Your request has been received ✅"});
@@ -82,9 +84,6 @@ const EmployerForm = ({
       alert("Failed to submit. Please try again.");
     }
   };
-
-  console.log({errors});
-  
 
   return (
     <div className="max-w-5xl bg-white w-full py-10 m-auto flex flex-col items-start justify-between px-6 md:px-12 lg:px-16 rounded-lg shadow-md">

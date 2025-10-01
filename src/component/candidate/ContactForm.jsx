@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { IoCloseOutline } from "react-icons/io5";
 import DatePickerInput from "../ui/datepicker";
 import toastNotif from "../ui/ToastNotif";
+import { useState } from "react";
 
 const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
   const {
@@ -12,6 +13,8 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
     control,
     formState: { errors, isSubmitting },
   } = useForm();
+
+  const [fileError, setFileError] = useState("");
 
   const onSubmit = async (data) => {
     try {
@@ -39,10 +42,16 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
       setSelectedJob({ id: null, title: "" })
       toastNotif({ text: "Application submitted 👌"});
     } catch (err) {
+      if (err.response.data.message || err.response.data.details) {
+        setFileError(err.response.data.message || err.response.data.details);
+      }
       console.error(err);
       alert("Failed to submit. Please try again.");
     }
   };
+
+  console.log({fileError});
+  
 
   return (
     <div className="max-w-5xl bg-white w-full py-10 m-auto flex flex-col items-start justify-between px-6 md:px-12 lg:px-16 rounded-lg shadow-md">
@@ -234,7 +243,7 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
               {...register("resume", { required: "Resume is required" })}
               className="w-full rounded-md border p-2 bg-white"
             />
-            {errors.resume && <p className="text-red-500 text-sm">{errors.resume.message}</p>}
+            {fileError && <p className="text-red-500 text-sm">{fileError}</p>}
           </div>
         </div>
 
@@ -247,20 +256,22 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
                 LinkedIn Profile
               </label>
               <input
-                {...register("linkedInProfile")}
+                {...register("linkedInProfile", { required: "Invalid Url" })}
                 placeholder="https://linkedin.com/in/username"
                 className="w-full rounded-md border p-2 bg-white"
               />
+              {errors.linkedInProfile && <p className="text-red-500 text-sm">{errors.linkedInProfile.message}</p>}
             </div>
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="portfolioUrl">
                 Portfolio / Website
               </label>
               <input
-                {...register("portfolioUrl")}
+                {...register("portfolioUrl",  { required: "Invalid Url" })}
                 placeholder="https://myportfolio.com"
                 className="w-full rounded-md border p-2 bg-white"
               />
+              {errors.portfolioUrl && <p className="text-red-500 text-sm">{errors.portfolioUrl.message}</p>}
             </div>
           </div>
         </div>
