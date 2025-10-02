@@ -120,6 +120,7 @@ const IntroductionHome = () => {
                                 lg-bottom-15 lg:right-0
                                 md:-bottom-10 md:right-0
                                 max-md:hidden"
+                                alt="spring"
                             />
                         </div>
                     </div>
