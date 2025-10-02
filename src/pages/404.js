@@ -8,8 +8,8 @@ export default function NotFound() {
   return (
     <>
       <SEO
-        title="Page Not Found | Outsourze"
-        description="The page you're looking for doesn't exist or has been moved. Return to Outsourze's homepage to explore our outsourcing solutions."
+        title="Page Not Found | Talentsourze"
+        description="The page you're looking for doesn't exist or has been moved. Return to Talentsourze's homepage to explore our outsourcing solutions."
         url={`${process.env.NEXT_PUBLIC_BASE_URL}${pathname}`}
       />
       <div>

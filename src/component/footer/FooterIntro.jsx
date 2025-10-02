@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaCalendarAlt } from "react-icons/fa";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineMail } from "react-icons/md";
-import OutsouzedLogo from "@/assets/logo/outsourze-logo-text.svg";
+import TalentsourzeLogo from "@/assets/logo/talentsourze-logo-text.svg";
 import { GoArrowUpRight } from "react-icons/go";
 
 const contactData = [{
@@ -28,7 +28,7 @@ const FooterIntro = () => {
                 <div className="flex flex-col gap-5 text-[#1C1C1C]
                 lg:w-[70%] md:w-full max-md:w-full">
                     <Link href={"/"} aria-label="Outsouzed Home">
-                        <OutsouzedLogo className="lg:w-42 md:w-28 max-md:w-24"/>
+                        <TalentsourzeLogo className="lg:w-42 md:w-28 max-md:w-24"/>
                     </Link>
                     <h2 className="text-4xl font-heading font-bold">Join us in shaping the future of AI as it evolve into a reality</h2>
                     <div className="flex items-center gap-5">
