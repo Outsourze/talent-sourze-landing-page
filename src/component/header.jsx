@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import OutsouzedLogo from "@/assets/logo/outsourze-logo-text.svg";
+import Talentsourzelogo from "@/assets/logo/talentsourze-logo-text.svg";
 import DesktopNav from './nav/destop-nav';
 import { useMediaQuery } from '@/utility/useMediaQuery';
 import MobileNav from './nav/mobile-nav';
@@ -14,7 +14,7 @@ const Header = () => {
             <div className="py-4 flex items-center justify-between max-w-7xl m-auto 
             xl:px-0 lg:px-20 md:px-20 max-md:px-5 relative">
                 <Link href={"/"} aria-label="Outsouzed Home">
-                  <OutsouzedLogo className="lg:w-52 md:w-36 max-md:w-36"/>
+                  <Talentsourzelogo className="lg:w-52 md:w-36 max-md:w-36"/>
                 </Link>
                 {isDesktop && <DesktopNav />}
                 {isTablet && <DesktopNav />}
