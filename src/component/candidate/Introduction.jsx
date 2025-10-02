@@ -13,23 +13,23 @@ const IntroductionCandidate= () => {
     return (
         <div className="max-w-7xl w-full py-10 m-auto flex flex-col items-center justify-between
             xl:px-0 xl:gap-20 xl:pt-20
-            lg:px-20 lg:gap-10 lg:pt-14
-            md:px-20 md:pt-12
-            max-md:px-5 max-md:py-10"
+            lg:px-20 lg:gap-10 lg:pt-20
+            md:px-20 md:pt-14
+            max-md:px-5 max-md:py-12"
         >
             <div className="flex items-center w-full justify-between max-md:gap-3">
                 <div className="flex flex-col  items-start
                     lg:gap-10 md:gap-5 max-md:gap-3
                     md:w-1/2 max-md:w-full ">
                     <h1 className="font-heading brand-text-gray font-[900]
-                    xl:text-7xl xl:leading-16
+                    xl:text-8xl xl:leading-24
                     lg:text-6xl lg:leading-12 
                     md:text-5xl max-md:text-5xl">Candidate</h1>
                     <p className=" font-bold
-                        lg:text-lg md:text-base max-md:text-sm max-sm:text-xs">Your talent deserves the right platform. Discover roles, grow your skills, and unlock your potential with Talentsourze.</p>
+                        lg:text-xl md:text-base max-md:text-sm max-sm:text-xs">Your talent deserves the right platform. Discover roles, grow your skills, and unlock your potential with Talentsourze.</p>
                     <Link 
                         href={"/"} 
-                        className="font-source text-white brand-bg-blue rounded-md
+                        className="font-source text-white brand-bg-blue rounded-md shadow-md
                         md:px-5 md:py-4 md:text-base
                         max-sm:px-3 max-md:py-2 max-md:text-sm"
                     >Start Your Career</Link>
@@ -39,7 +39,10 @@ const IntroductionCandidate= () => {
                     {/* Overlay (shadow card) */}
                     <div
                       className="absolute inset-0 bg-[#D9D9D980] xl:rounded-[2.5rem] md:rounded-[2rem] max-md:rounded-[1rem] max-sm:rounded-[0.8rem] z-0
-                                 translate-x-[-1rem] translate-y-[-1rem]"
+                                 xl:translate-x-[-2rem] xl:translate-y-[-2rem]
+                                 lg:translate-x-[-1.5rem] lg:translate-y-[-1.5rem]
+                                 md:translate-x-[-1rem] md:translate-y-[-1rem]
+                                 max-md:translate-x-[-1rem] max-md:translate-y-[-1rem]"
                     />
                     {/* Image */}
                     <Image

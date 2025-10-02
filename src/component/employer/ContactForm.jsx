@@ -74,8 +74,6 @@ const EmployerForm = ({
         { headers: { "Content-Type": "multipart/form-data" } }
       );
 
-      console.log({res});
-      
       reset();
       setIsFormOpen(false);
       toastNotif({ text: "Your request has been received ✅"});

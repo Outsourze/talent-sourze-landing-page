@@ -15,25 +15,25 @@ const FooterSocialMedia = ({
         url: "/",
         icon: 
         <FaFacebookF 
-            size={size === "normal" ? isMobile ? 10 : 14 : isDesktop ? 16 : 24}
+            size={isMobile ? 10 : 24}
         />
     }, {
         url: "/",
         icon: 
         <FaInstagram 
-            size={size === "normal" ? isMobile ? 10 : 14 : isDesktop ? 16 : 24}
+            size={isMobile ? 10 : 24}
         />
     }, {
         url: "/",
         icon: 
         <FaXTwitter 
-            size={size === "normal" ? isMobile ? 10 : 14 : isDesktop ? 16 : 24}
+            size={isMobile ? 10 : 24}
         />
     }, {
         url: "/",
         icon: 
         <FaLinkedinIn 
-            size={size === "normal" ? isMobile ? 10 : 14 : isDesktop ? 16 : 24}
+            size={isMobile ? 10 : 24}
         />
     }]
 

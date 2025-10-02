@@ -28,8 +28,6 @@ const Sector = () => {
                 `${process.env.NEXT_PUBLIC_BASE_API}/sectors/${sectorId}/jobs`
               );
 
-              console.log({data});
-
               setSector(data);
             } catch (err) {
               console.error("Failed to fetch jobs:", err);

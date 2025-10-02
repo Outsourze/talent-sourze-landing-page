@@ -50,11 +50,8 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
     }
   };
 
-  console.log({fileError});
-  
-
   return (
-    <div className="max-w-5xl bg-white w-full py-10 m-auto flex flex-col items-start justify-between px-6 md:px-12 lg:px-16 rounded-lg shadow-md">
+    <div className="max-w-5xl bg-white w-full py-10 m-auto flex flex-col items-start justify-between px-6 md:px-12 lg:px-16 shadow-md lg:my-5 lg:rounded-lg ">
       {/* Header */}
       <div className="flex justify-between w-full mb-6 md:items-center max-md:items-start">
         <h1 className="text-3xl md:text-4xl max-md:text-2xl font-bold text-gray-800">
