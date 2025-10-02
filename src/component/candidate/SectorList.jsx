@@ -1,38 +1,8 @@
-import { useState, useEffect, useMemo } from "react";
-import axios from "axios";
 import SectorCard from "./SectorCard";
+import { useSectors } from "@/context/useFetchSectors";
 
 const SectorList = () => {
-    const [sectorsData, setSectorsData] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-      let isMounted = true;
-
-      const fetchSectorsData = async () => {
-                 
-        try {
-          const { data } = await axios.get(
-            `${process.env.NEXT_PUBLIC_BASE_API}/sectors`
-          );
-
-          if (isMounted) setSectorsData(data);
-        } catch (err) {
-          console.error(err);
-        } finally {
-          if (isMounted) setLoading(false);
-        }
-      };
-
-      fetchSectorsData();
-
-      return () => {
-        isMounted = false; // prevent state update if component unmounted
-      };
-    }, []);
-
-    // Memoized sectors (optional if you add search/filter later)
-    const memoizedSectors = useMemo(() => sectorsData, [sectorsData]);
+  const { sectors, loading, error } = useSectors();
 
     if (loading) return <p className="text-center py-10">Loading sectors...</p>;
 
@@ -54,8 +24,8 @@ const SectorList = () => {
                 </div>
                 <div className="flex justify-between gap-5
                 sm:flex-wrap max-sm:flex-col">
-                  {memoizedSectors.length > 0 ? (
-                    memoizedSectors.map((sector, index) => (
+                  {sectors.length > 0 ? (
+                    sectors.map((sector, index) => (
                       <SectorCard 
                         key={index} 
                         sectorId={sector.id}

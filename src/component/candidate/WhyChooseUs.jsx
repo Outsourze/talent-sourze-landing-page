@@ -1,5 +1,5 @@
 import Image from "next/image";
-import hero1 from "@/assets/images/candidate/city.png";
+import hero1 from "@/assets/images/candidate/meeting.png";
 import calendar from "@/assets/images/candidate/Calendar 1.png";
 import map from "@/assets/images/candidate/Map Pin.png";
 import medal from "@/assets/images/candidate/Medal.png";
@@ -36,13 +36,14 @@ const WhyUs = () => {
                 xl:w-[40%] 
                 lg:w-[40%] 
                 md:w-[40%] md:flex
-                max-md:w-1/2 max-sm:hidden">
+                max-md:w-1/2 max-md:hidden">
               <div className="relative inline-block">
                 {/* Overlay (shadow card) */}
                 <div
                   className="absolute bg-[#D9D9D980] xl:rounded-[2.5rem] md:rounded-[2rem] max-md:rounded-[1rem] max-sm:rounded-[0.8rem] z-0 translate-x-[-1rem] translate-y-[-1rem]
-                             lg:-right-20 lg:-top-6 lg:left-20 lg:bottom-6
-                             md:-right-10 md:top-4 md:left-10 md:bottom-4"
+                            xl:-right-25 xl:-top-3 xl:left-15 xl:bottom-3
+                            lg:-right-25 lg:-top-3 lg:left-15 lg:bottom-3
+                            md:-right-12 md:top-0 md:left-10 md:bottom-2"
                 />
                 {/* Image */}
                 <Image
@@ -52,6 +53,14 @@ const WhyUs = () => {
                   alt="hero1"
                   className="rounded-2xl relative z-10"
                 />
+                <div className="absolute z-20 bg-[#0000006b] backdrop-blur-sm rounded-xl overflow-hidden 
+                lg:-bottom-5 lg:-right-[40%]
+                md:-bottom-5 md:-right-[40%]">
+                    <p className="text-white font-bold font-heading 
+                        xl:text-3xl xl:p-8
+                        lg:text-2xl lg:p-5
+                        md:text-base md:p-3">Your career partner</p>
+                </div>
               </div>
             </div>
             <div className="flex flex-col 

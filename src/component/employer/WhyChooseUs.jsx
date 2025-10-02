@@ -43,12 +43,12 @@ const ContactUs = () => {
                     md:hidden
                     max-md:hidden">
                         <div className="flex flex-col gap-2">
-                            <Image src={why1} alt="why img"/>
-                            <Image src={why2} alt="why img"/>
+                            <Image src={why4} alt="why img"/>
+                            <Image src={why3} alt="why img"/>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <Image src={why3} alt="why img"/>
-                            <Image src={why4} alt="why img"/>
+                            <Image src={why1} alt="why img"/>
+                            <Image src={why2} alt="why img"/>
                         </div>
                     </div>
                 </div>
@@ -60,8 +60,8 @@ const ContactUs = () => {
                 max-sm:flex-col max-sm:gap-3">
                     {whyUsArr.map((list, index) => (
                         <div key={index} className="flex flex-col gap-5 items-start md:w-[48%] max-sm:w-full">
-                            <div className="bg-white p-4 rounded-lg shadow-sm">
-                                <p className="font-heading italic brand-text-blue font-bold">{list.num}</p>
+                            <div className="bg-white py-5 px-6 rounded-lg shadow-md">
+                                <p className="font-heading italic brand-text-blue font-bold md:text-2xl">{list.num}</p>
                             </div>
                             <h3 className="font-heading font-semibold text-3xl">{list.title}</h3>
                             <p className="text-gray-500">{list.descr}</p>

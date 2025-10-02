@@ -16,7 +16,7 @@ const GetStarted = ({
                     lg:text-4xl md:text-3xl max-md:text-2xl">Your Recruitment Partner for Every Industry.</h1>
                 <p className="text-white
                     md:text-lg max-md:text-base">From job posting to candidate screening, our HR team handles the process—making hiring simple and efficient.</p>
-                <button onClick={() => setIsFormOpen(true)} className="px-5 py-3 font-source rounded-lg bg-[#1C1C1C] text-white">Get Started</button>
+                <button onClick={() => setIsFormOpen(true)} className="px-5 py-3 font-source rounded-lg bg-[#1C1C1C] text-white cursor-pointer">Get Started</button>
             </div>
         </div>
     )

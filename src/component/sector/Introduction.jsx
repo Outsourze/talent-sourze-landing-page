@@ -5,9 +5,6 @@ const IntroductionSector= ({
     descr,
     sectorImg
 }) => {
-  console.log({sectorImg});
-  
-
 
     return (
         <div className="bg-white ">
