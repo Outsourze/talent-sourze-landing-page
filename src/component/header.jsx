@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import OutsouzedLogo from "@/assets/logo/outsourze-logo-text.svg";
 import DesktopNav from './nav/destop-nav';
-import TabletNav from './nav/tablet-nav';
 import { useMediaQuery } from '@/utility/useMediaQuery';
 import MobileNav from './nav/mobile-nav';
 

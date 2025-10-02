@@ -4,13 +4,14 @@ import axios from "axios";
 import { IoCloseOutline } from "react-icons/io5";
 import DatePickerInput from "../ui/datepicker";
 import toastNotif from "../ui/ToastNotif";
+import { useSectors } from "@/context/useFetchSectors";
 
 const EmployerForm = ({
   isFormOpen,
   setIsFormOpen
 }) => {
-  const [sectors, setSectors] = useState([]);
   const [jobs, setJobs] = useState([]);
+  const { sectors } = useSectors();
   const [loadingJobs, setLoadingJobs] = useState(false);
 
   const {
@@ -23,20 +24,6 @@ const EmployerForm = ({
   } = useForm();
 
   const selectedSector = watch("sectorId");
-
-  useEffect(() => {
-    const fetchSectors = async () => {
-      try {
-        const { data } = await axios.get(
-          `${process.env.NEXT_PUBLIC_BASE_API}/sectors`
-        );
-        setSectors(data);
-      } catch (err) {
-        console.error("Failed to fetch sectors", err);
-      }
-    };
-    fetchSectors();
-  }, []);
 
   const fetchJobs = useCallback(async (sectorId) => {
     setLoadingJobs(true);
@@ -84,7 +71,7 @@ const EmployerForm = ({
   };
 
   return (
-    <div className="max-w-5xl bg-white w-full py-10 m-auto flex flex-col items-start justify-between px-6 md:px-12 lg:px-16 rounded-lg shadow-md">
+    <div className="max-w-5xl bg-white w-full py-10 m-auto flex flex-col items-start justify-between px-6 md:px-12 lg:px-16 lg:my-5 rounded-lg shadow-md">
       {/* Header */}
       <div className="flex justify-between items-center w-full mb-6">
         <h1 className="md:text-4xl max-md:text-2xl font-bold text-gray-800">

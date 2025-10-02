@@ -26,8 +26,8 @@ const IntroductionHome = () => {
     
     return (
         <div className="max-w-7xl w-full m-auto flex flex-col items-center justify-between
-            xl:px-0 xl:gap-20 xl:py-20 
-            lg:px-20 lg:gap-10 lg:py-10
+            xl:px-0 xl:gap-10 xl:pt-10 
+            lg:px-20 lg:gap-10 lg:pt-10
             md:px-20 md:gap-10 md:py-5
             max-md:px-5 max-md:gap-5 max-md:py-3"
         >

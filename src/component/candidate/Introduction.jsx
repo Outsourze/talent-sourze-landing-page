@@ -29,7 +29,7 @@ const IntroductionCandidate= () => {
                         lg:text-xl md:text-base max-md:text-sm max-sm:text-xs">Your talent deserves the right platform. Discover roles, grow your skills, and unlock your potential with Talentsourze.</p>
                     <Link 
                         href={"/"} 
-                        className="font-source text-white brand-bg-blue rounded-md shadow-md
+                        className="font-source text-white brand-bg-blue rounded-md shadow-md hover:bg-black duration-300
                         md:px-5 md:py-4 md:text-base
                         max-sm:px-3 max-md:py-2 max-md:text-sm"
                     >Start Your Career</Link>

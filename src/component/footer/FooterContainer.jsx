@@ -3,7 +3,7 @@ import FooterIntro from "./FooterIntro";
 
 const Footer = () => {
     return (
-        <div className="flex flex-col bg-[#f5f5f5]">
+        <div className="flex flex-col bg-[#F8F8F8]">
             <FooterIntro />
             <CopyRight />
         </div>

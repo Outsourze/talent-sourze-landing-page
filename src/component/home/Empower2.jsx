@@ -8,6 +8,8 @@ import empower3 from "@/assets/images/home-empower/empower3.png";
 import empower4 from "@/assets/images/home-empower/empower4.png";
 import empower5 from "@/assets/images/home-empower/empower5.png";
 import empower6 from "@/assets/images/home-empower/empower6.png";
+import { useState } from "react";
+import BorderButton from "../ui/button/BorderButton";
 
 const benefits = [
     "Access a curated pool of skilled professionals",
@@ -16,6 +18,8 @@ const benefits = [
 ]
 
 const EmpowerHome = () => {
+    const [isHover, setIsHover] = useState(false);
+
     return (
         <div className="max-w-7xl w-full py-10 m-auto flex flex-col items-center justify-between
             xl:px-0 xl:gap-20 
@@ -38,10 +42,15 @@ const EmpowerHome = () => {
                             </div>
                         ))}
                     </div>
-                    <Link href={"/"} className="flex items-center gap-2 border-[1.5px] border-[#18181B] rounded-md px-7 py-4">
-                      <span className="brand-text-gray font-bold font-source">Get Started</span>
-                      <FiArrowRight size={20}/>
-                    </Link>
+                    <BorderButton>
+                        <Link
+                            href={"/"} 
+                            className="flex items-center gap-5"
+                        >
+                          <span className="font-bold font-source ">Get Started</span>
+                          <FiArrowRight size={20}/>
+                        </Link>
+                    </BorderButton>
                 </div>
                 <div className="px-5 h-[550px]
                 xl:w-[55%] lg:w-1/2 lg:block md:hidden max-md:hidden relative">
