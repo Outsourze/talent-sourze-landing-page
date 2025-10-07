@@ -7,7 +7,7 @@ const SectorList = () => {
     if (loading) return <p className="text-center py-10">Loading sectors...</p>;
 
     return (
-        <div className="max-w-7xl w-full py-10 m-auto flex flex-col items-center justify-between
+        <div id="sector_list" className="max-w-7xl w-full py-10 m-auto flex flex-col items-center justify-between
             xl:px-0 xl:gap-20 
             lg:px-20 lg:gap-10 
             md:px-20 

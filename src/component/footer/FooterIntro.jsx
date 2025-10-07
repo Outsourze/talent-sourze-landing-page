@@ -32,8 +32,8 @@ const FooterIntro = () => {
                     </Link>
                     <h2 className="text-4xl font-heading font-bold">Join us in shaping the future of AI as it evolve into a reality</h2>
                     <div className="flex items-center gap-5">
-                        <Link className="flex gap-1 items-center px-5 py-2 outline rounded-4xl" href={"/"}><span>Employer</span> <GoArrowUpRight /></Link>
-                        <Link className="flex gap-1 items-center px-5 py-2 outline rounded-4xl" href={"/"}><span>Candidate</span> <GoArrowUpRight /></Link>
+                        <Link className="flex gap-1 items-center px-5 py-2 outline rounded-4xl" href={"https://talentsourze.com/employer"}><span>Employer</span> <GoArrowUpRight /></Link>
+                        <Link className="flex gap-1 items-center px-5 py-2 outline rounded-4xl" href={"https://talentsourze.com/candidate"}><span>Candidate</span> <GoArrowUpRight /></Link>
                     </div>
                 </div>
                 <div className="flex flex-col gap-2 text-[#1C1C1C] font-semibold

@@ -3,7 +3,7 @@ import hero1 from "@/assets/images/employer/hero-1.png";
 import Link from "next/link";
 import { useMediaQuery } from "@/utility/useMediaQuery";
 
-const IntroductionEmployer = () => {
+const IntroductionEmployer = ({ setIsFormOpen }) => {
     const isDesktop = useMediaQuery("(min-width: 1280px)");
     const isLaptop = useMediaQuery("(min-width: 1024px) and (max-width: 1279px)");
     const isTablet = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
@@ -25,12 +25,12 @@ const IntroductionEmployer = () => {
                     md:text-5xl max-md:text-5xl">Employers</h1>
                     <p className=" font-bold
                         lg:text-xl md:text-base max-md:text-sm max-sm:text-xs">Your talent deserves the right platform. Discover roles, grow your skills, and unlock your potential with Talentsourze.</p>
-                    <Link 
-                        href={"/"} 
-                        className="font-source text-white brand-bg-blue rounded-md shadow-md
+                    <button 
+                        onClick={() => setIsFormOpen(true)}
+                        className="cursor-pointer font-source text-white brand-bg-blue rounded-md shadow-md
                         md:px-5 md:py-4 md:text-base hover:bg-black duration-300
                         max-sm:px-3 max-md:py-2 max-md:text-sm "
-                    >Begin Your Journey</Link>
+                    >Begin Your Journey</button>
                 </div>
                 <div className="px-5 flex justify-end xl:w-[40%] lg:w-1/2 md:w-1/2 max-md:w-1/2">
                   <div className="relative inline-block">
