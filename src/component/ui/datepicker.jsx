@@ -11,7 +11,19 @@ export default function DatePickerInput({
   rules = {},
   error,
   required = false,
+  mode = "normal", // 👈 new prop: "normal" | "past" | "future"
 }) {
+  // ✅ Determine date limits based on mode
+  const today = new Date();
+  let minDate = null;
+  let maxDate = null;
+
+  if (mode === "past") {
+    maxDate = today; // can’t pick future dates
+  } else if (mode === "future") {
+    minDate = today; // can’t pick past dates
+  }
+
   return (
     <div className="w-full">
       {label && (
@@ -38,11 +50,18 @@ export default function DatePickerInput({
               onChange={(date) =>
                 field.onChange(date ? date.toISOString().split("T")[0] : null)
               }
-              minDate={new Date()} // prevents past dates
               dateFormat="yyyy-MM-dd"
               placeholderText="Select a date"
               className="w-full bg-transparent focus:outline-none cursor-pointer"
               showPopperArrow={false}
+              autoComplete="off"
+              minDate={minDate}
+              maxDate={maxDate}
+              showMonthDropdown      // 👈 enables month dropdown
+              showYearDropdown       // 👈 enables year dropdown
+              dropdownMode="select"  // 👈 makes them actual select dropdowns
+              yearDropdownItemNumber={100} // optional: show up to 100 years
+              scrollableYearDropdown // 👈 makes the year dropdown scrollable
             />
           )}
         />

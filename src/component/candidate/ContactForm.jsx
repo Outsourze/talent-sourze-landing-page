@@ -126,7 +126,8 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
               name="dateOfBirth"
               control={control}         // comes from useForm()
               required                  // adds "is required" validation
-              error={errors.dateOfBirth}  // shows error message
+              error={errors.dateOfBirth}  // shows error 
+              mode="past"
             />
           </div>
         </div>
@@ -224,6 +225,7 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
               control={control}         // comes from useForm()
               required                  // adds "is required" validation
               error={errors.availabilityDate}  // shows error message
+              mode="future"
             />
           </div>
         </div>
@@ -238,7 +240,7 @@ const ContactForm = ({ selectedJob, setSelectedJob, sectorId }) => {
             <input
               type="file"
               {...register("resume", { required: "Resume is required" })}
-              className="w-full rounded-md border p-2 bg-white"
+              className="rounded-md border p-2 bg-white cursor-pointer w-1/2"
             />
             {fileError && <p className="text-red-500 text-sm">{fileError}</p>}
           </div>
