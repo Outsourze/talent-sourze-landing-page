@@ -242,6 +242,7 @@ const EmployerForm = ({
               control={control}         // comes from useForm()
               required                  // adds "is required" validation
               error={errors.startDate}  // shows error message
+              mode="future"
             />
           </div>
         </div>
