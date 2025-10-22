@@ -19,19 +19,19 @@ const FooterSocialMedia = ({
             size={isMobile ? 10 : 24}
         />
     }, {
-        url: "https://www.instagram.com/leadsourze/#",
+        url: "https://www.instagram.com/talentsourzeglobal/#",
         icon: 
         <FaInstagram 
             size={isMobile ? 10 : 24}
         />
     }, {
-        url: "https://www.tiktok.com/@leadsourze",
+        url: "https://www.tiktok.com/@talentsourze",
         icon: 
         <FaTiktok  
             size={isMobile ? 10 : 24}
         />
     }, {
-        url: "https://www.linkedin.com/company/leadsourze/",
+        url: "https://www.linkedin.com/company/talentsourze/",
         icon: 
         <FaLinkedinIn 
             size={isMobile ? 10 : 24}
