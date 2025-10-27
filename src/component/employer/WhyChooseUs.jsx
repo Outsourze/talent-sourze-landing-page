@@ -6,20 +6,20 @@ import Image from "next/image";
 
 const whyUsArr = [{
     num: "01",
-    title: "Pre-Screened Talent",
-    descr: "Save time and resources. All candidates are vetted by our HR experts before reaching your desk."
+    title: "Pre-Vetted Talent",
+    descr: "We handpick and screen every candidate — so you only meet professionals ready to deliver from day one."
 }, {
     num: "02",
-    title: "Faster Recruitment",
-    descr: "Fill roles quickly with our streamlined process that connects you to job-ready professionals."
+    title: "Fast, Hassle-Free Hiring",
+    descr: "Our streamlined process connects you to qualified talent quickly, without the long wait or heavy admin."
 }, {
     num: "03",
-    title: "Dedicated HR Support",
-    descr: "Our team manages applications, job postings, and candidate screening so you can focus on your business."
+    title: "End-to-End Support",
+    descr: "From sourcing and onboarding to HR and payroll, we manage the details so you can focus on growth."
 }, {
     num: "04",
-    title: "Industry-Wide Expertise",
-    descr: "From healthcare to IT, we cover 9 major industries with the right professionals for your needs."
+    title: "Expertise Across Industries",
+    descr: "Whether you’re in mining, finance, marketing, IT, or healthcare — we’ve got the right people for the job."
 }]
 
 const ContactUs = () => {
@@ -36,8 +36,11 @@ const ContactUs = () => {
                 max-md:flex-col">
                 <div className="flex flex-col gap-5
                     lg:w-[45%] md:w-full">
-                    <h2 className="text-3xl font-heading font-bold">Why Choose Us</h2>
-                    <p className="text-gray-500">Your success depends on the right people. With Talentsourze, you gain a trusted partner that helps you build a strong team and grow your business with confidence.</p>
+                    <h2 className="text-3xl font-heading font-bold">Why Choose Talent Sourze</h2>
+                    <p className="text-gray-500">Your success starts with the right people — and we know where to find them. 
+                         At Talent Sourze, we connect global businesses with skilled Filipino professionals who bring 
+                        reliability, talent, and heart to every role. 
+                    </p>
                     <div className="gap-2 
                     lg:flex
                     md:hidden
@@ -63,7 +66,7 @@ const ContactUs = () => {
                             <div className="bg-white py-5 px-6 rounded-lg shadow-md">
                                 <p className="font-heading italic brand-text-blue font-bold md:text-2xl">{list.num}</p>
                             </div>
-                            <h3 className="font-heading font-semibold text-3xl">{list.title}</h3>
+                            <h3 className="font-heading font-semibold text-2xl">{list.title}</h3>
                             <p className="text-gray-500">{list.descr}</p>
                         </div>
                     ))}

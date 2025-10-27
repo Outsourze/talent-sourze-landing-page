@@ -7,16 +7,16 @@ import { useMediaQuery } from "@/utility/useMediaQuery";
 
 const whyUsOptionsData = [{
     icon: medal,
-    title: "Best Career Matches",
-    descr: "We connect you with opportunities that align with your skills and future goals."
+    title: "Career Matches That Fit You",
+    descr: "We connect you with international employers who value your skills, experience, and potential — not just your résumé."
 }, {
     icon: calendar,
-    title: "Quick Hiring Process",
-    descr: "Apply today and get matched with employers faster than traditional job searches."
+    title: "Fast, Hassle-Free Process",
+    descr: "No endless waiting. Our streamlined recruitment process helps you get matched and hired faster"
 }, {
     icon: map,
-    title: "Opportunities Everywhere",
-    descr: "Discover roles across industries and locations, giving you the flexibility to grow your career."
+    title: "Global Opportunities",
+    descr: "Whether you want to work remotely or overseas, Talent Sourze gives you access to roles across industries and borders."
 }]
 
 const WhyUs = () => {
@@ -68,9 +68,9 @@ const WhyUs = () => {
                 md:w-[60%] md:gap-5
                 max-sm:gap-1">
                 <h4 className="font-semibold brand-text-blue
-                    lg:text-3xl md:text-xl max-md:text-lg">Way Choose Us?</h4>
-                <h2 className="font-heading font-extrabold
-                    lg:text-5xl md:text-3xl max-md:text-2xl">Plan Your Career With Us</h2>
+                    lg:text-3xl md:text-xl max-md:text-lg">Why Choose Talent Sourze</h4>
+                <h2 className="font-heading font-semibold
+                    lg:text-lg md:text-base max-md:text-sm">Plan your career with a partner that understands your goals — and opens doors to global opportunities.</h2>
                 <div className="flex flex-col gap-5 max-sm:mt-5">
                     {whyUsOptionsData.map((data, index) => (
                         <div key={index} className="flex gap-4 items-start">
@@ -78,9 +78,15 @@ const WhyUs = () => {
                                 <Image className="w-10 h-10" src={data.icon} alt={data.title}/>
                             </div>
                             <div className="flex flex-col">
-                                <h5 className="font-bold
-                                    lg:text-2xl md:text-xl max-md:text-lg">{data.title}</h5>
-                                <p className="brand-text-gray lg:text-base md:text-sm max-md:text-xs">{data.descr}</p>
+                                <h5 className="flex items-center gap-3 font-semibold text-lg">
+                                  <span className="brand-text-blue font-mono italic">{String(index + 1).padStart(2, '0')}</span>
+                                  {data.title}
+                                </h5>
+                                <p className="brand-text-gray 
+                                    lg:text-base lg:leading-5
+                                    md:text-sm 
+                                    max-md:text-xs"
+                                >{data.descr}</p>
                             </div>
                         </div>
                     ))}
