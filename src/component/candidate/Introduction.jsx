@@ -24,9 +24,12 @@ const IntroductionCandidate= () => {
                     <h1 className="font-heading brand-text-gray font-[900]
                     xl:text-8xl xl:leading-24
                     lg:text-6xl lg:leading-12 
-                    md:text-5xl max-md:text-5xl">Candidate</h1>
+                    md:text-5xl max-md:text-5xl">Candidates</h1>
                     <p className=" font-bold
-                        lg:text-xl md:text-base max-md:text-sm max-sm:text-xs">Your talent deserves the right platform. Discover roles, grow your skills, and unlock your potential with Talentsourze.</p>
+                        lg:text-xl md:text-base max-md:text-sm max-sm:text-xs">
+                            Take your career global with Talent Sourze. 
+                             We connect skilled Filipino professionals with international companies that value your talent, 
+                            culture, and drive.</p>
                     <Link 
                         href={"#sector_list"} 
                         className="font-source text-white brand-bg-blue rounded-md shadow-md hover:bg-black duration-300

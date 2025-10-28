@@ -30,10 +30,11 @@ const FooterIntro = () => {
                     <Link href={"/"} aria-label="Outsouzed Home">
                         <TalentsourzeLogo className="lg:w-42 md:w-28 max-md:w-24"/>
                     </Link>
-                    <h2 className="text-4xl font-heading font-bold">Join us in shaping the future of AI as it evolve into a reality</h2>
+                    <h2 className="text-4xl font-heading font-bold">Join Us in Connecting Filipino Talent with the World</h2>
+                    <p>Whether you’re looking to hire exceptional talent or land your next career move, Talent Sourze helps bridge you to the right opportunity.</p>
                     <div className="flex items-center gap-5">
-                        <Link className="flex gap-1 items-center px-5 py-2 outline rounded-4xl" href={"https://talentsourze.com/employer"}><span>Employer</span> <GoArrowUpRight /></Link>
-                        <Link className="flex gap-1 items-center px-5 py-2 outline rounded-4xl" href={"https://talentsourze.com/candidate"}><span>Candidate</span> <GoArrowUpRight /></Link>
+                        <Link className="flex gap-1 items-center px-5 py-2 outline rounded-4xl" href={"https://talentsourze.com/employer"}><span>I'm an Employer</span> <GoArrowUpRight /></Link>
+                        <Link className="flex gap-1 items-center px-5 py-2 outline rounded-4xl" href={"https://talentsourze.com/candidate"}><span>I'm a Candidate</span> <GoArrowUpRight /></Link>
                     </div>
                 </div>
                 <div className="flex flex-col gap-2 text-[#1C1C1C] font-semibold

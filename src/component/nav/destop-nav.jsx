@@ -27,6 +27,14 @@ const DesktopNav = () => {
         Candidate
       </Link>
 
+      <Link
+        onClick={handleCloseDropdown}
+        className="brand-text-gray font-semibold font-source text-lg"
+        href="/about"
+      >
+        About
+      </Link>
+
 
       <div className={`relative border border-[#0077B6] m-0 p-0 ${isOpen ? "rounded-t-lg" : "rounded-lg"}`}>
         {/* Dropdown trigger */}

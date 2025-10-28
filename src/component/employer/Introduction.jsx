@@ -24,13 +24,14 @@ const IntroductionEmployer = ({ setIsFormOpen }) => {
                     lg:text-6xl lg:leading-12 
                     md:text-5xl max-md:text-5xl">Employers</h1>
                     <p className=" font-bold
-                        lg:text-xl md:text-base max-md:text-sm max-sm:text-xs">Your talent deserves the right platform. Discover roles, grow your skills, and unlock your potential with Talentsourze.</p>
+                        lg:text-xl md:text-base max-md:text-sm max-sm:text-xs"> 
+                            Build your dream team with exceptional Filipino talent. From sourcing and screening to onboarding and support, we make global hiring simple, reliable, and cost-effective.</p>
                     <button 
                         onClick={() => setIsFormOpen(true)}
                         className="cursor-pointer font-source text-white brand-bg-blue rounded-md shadow-md
                         md:px-5 md:py-4 md:text-base hover:bg-black duration-300
                         max-sm:px-3 max-md:py-2 max-md:text-sm "
-                    >Begin Your Journey</button>
+                    >Start Hiring</button>
                 </div>
                 <div className="px-5 flex justify-end xl:w-[40%] lg:w-1/2 md:w-1/2 max-md:w-1/2">
                   <div className="relative inline-block">

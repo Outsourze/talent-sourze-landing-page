@@ -68,6 +68,16 @@ const MobileNav = () => {
                 </Link>
               </li>
 
+              <li>
+                <Link
+                  onClick={handleMenuClose}
+                  href="/about"
+                  className="block brand-text-gray font-source font-semibold px-2 py-1 rounded-md hover:bg-gray-100 active:bg-gray-200 transition-colors"
+                >
+                  About
+                </Link>
+              </li>
+
               {/* Job Listings Dropdown */}
               <li>
                 <button
