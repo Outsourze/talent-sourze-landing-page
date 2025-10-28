@@ -17,7 +17,7 @@ const Header = () => {
                   <Talentsourzelogo className="lg:w-52 md:w-36 max-md:w-36"/>
                 </Link>
                 {isDesktop && <DesktopNav />}
-                {isTablet && <DesktopNav />}
+                {isTablet && <MobileNav />}
                 {isMobile && <MobileNav />}
             </div>
         </div>

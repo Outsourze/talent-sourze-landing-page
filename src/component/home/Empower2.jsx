@@ -28,29 +28,27 @@ const EmpowerHome = () => {
             max-md:px-5 max-md:py-10"
         >
             <div className="flex items-center w-full justify-between">
-                <div className="flex flex-col items-start gap-8 
+                <div className="flex flex-col items-start gap-0 
                 xl:w-[40%] lg:w-1/2">
                     <h1 className="brand-text-gray font-heading font-extrabold 
                     xl:mb-10 xl:text-[3.5rem] 
-                    lg:mb-5 lg:text-5xl md:text-[3.2rem] ">Empower Your Workforce</h1>
-                    <div className="flex flex-col gap-5">
-                        {benefits.map((benefit, index) => (
-                            <div className="gap-3 flex items-center" key={index}>
-                                <FaCircleCheck className="brand-text-gray" size={16}/>
-                                <p className="brand-text-gray 
-                                xl:text-lg lg:text-base md:text-lg">{benefit}</p>
-                            </div>
-                        ))}
+                    lg:mb-5 lg:text-5xl md:text-[3.2rem] ">Build Your Global Team, Seamlessly</h1>
+                    <div className="flex flex-col gap-10 items-start">
+                        <p className="brand-text-gray 
+                    xl:text-lg lg:text-base md:text-lg">We connect you with exceptional Filipino talent — handpicked for skill, reliability, and cultural fit. 
+                                    From first interview to first day, we make hiring across borders simple.
+                        </p>   
+                        <BorderButton>
+                            <Link
+                                href={"/"} 
+                                className="flex items-center gap-5"
+                            >
+                              <span className="font-bold font-source ">Get Started</span>
+                              <FiArrowRight size={20}/>
+                            </Link>
+                        </BorderButton>
                     </div>
-                    <BorderButton>
-                        <Link
-                            href={"/"} 
-                            className="flex items-center gap-5"
-                        >
-                          <span className="font-bold font-source ">Get Started</span>
-                          <FiArrowRight size={20}/>
-                        </Link>
-                    </BorderButton>
+                    
                 </div>
                 <div className="px-5 h-[550px]
                 xl:w-[55%] lg:w-1/2 lg:block md:hidden max-md:hidden relative">

@@ -9,13 +9,13 @@ import { useMediaQuery } from "@/utility/useMediaQuery";
 
 const list = [{
     title: "Opportunities",
-    desc: "Right roles, right fit",
+    desc: "Matching exceptional Filipino professionals with global roles that fit their skills and aspirations.",
 }, {
     title: "Growth",
-    desc: "Scaling careers and teams",
+    desc: "Empowering people and companies to scale together — building lasting success across borders.",
 }, {
-    title: "Connected",
-    desc: "Bridging talent & business",
+    title: "Connection",
+    desc: "Bridging world-class talent with businesses that value drive, dedication, and culture.",
 }]
 
 const IntroductionHome = () => {
@@ -23,7 +23,7 @@ const IntroductionHome = () => {
     const isLaptop = useMediaQuery("(min-width: 1024px) and (max-width: 1279px)");
     const isTablet = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
     const isMobile = useMediaQuery("(max-width: 767px)");
-    
+       
     return (
         <div className="max-w-7xl w-full m-auto flex flex-col items-center justify-between
             xl:px-0 xl:gap-10 xl:pt-10 
@@ -41,12 +41,12 @@ const IntroductionHome = () => {
                     xl:text-7xl xl:leading-18
                     lg:text-5xl lg:leading-12 
                     md:text-3xl md:leading-7
-                    max-md:text-3xl max-md:leading-7">Let’s Create <br/> Memorable <br/> Journey</h1>
+                    max-md:text-3xl max-md:leading-7">Connecting <br/> Filipino <br/> Talent to <br />the World</h1>
                     <p className="font-semibold text-gray-600 
                     xl:text-2xl xl:leading-normal
                     lg:text-xl lg:leading-normal
                     md:text-sm md:leading-tight
-                    max-md:text-xs max-md:leading-3">Discover a platform where talent meets the right opportunities. We bridge the gap between professionals and companies ready to grow.</p>
+                    max-md:text-xs max-md:leading-3">We connect world-class Filipino professionals with companies who know great talent has no borders.</p>
                     <div className={`relative flex z-10 overflow-hidden lg:rounded-4xl md:rounded-xl max-md:rounded-lg md:-bottom-10  max-md:-bottom-5
                       ${isDesktop ? "w-[770px]" : isLaptop ? "w-[650px]" : isTablet ? "w-[500px]" : "w-[350px]"}
                     `}>
@@ -132,20 +132,20 @@ const IntroductionHome = () => {
                 <div className="flex justify-center flex-col gap-3 items-center py-5 
                 md:w-[31%] md:border-r md:border-r-gray-300 md:px-5
                 max-md:w-full max-md:border-b max-md:border-b-gray-300">
-                    <h4 className="font-heading font-extrabold text-5xl brand-text-gray">+500K</h4>
-                    <p className="text-lg text-[#4D4D56] lg:text-lg md:text-base md:text-center">Talent connections made globally</p>
+                    <h4 className="font-heading font-extrabold text-5xl brand-text-gray">Hundreds</h4>
+                    <p className="text-lg text-[#4D4D56] lg:text-lg md:text-base md:text-center">of skilled Filipino professionals connected to global employers</p>
                 </div>
                 <div className="flex justify-center flex-col gap-3 items-center py-5 
                 md:w-[31%] md:border-r md:border-r-gray-300 md:px-5
                 max-md:w-full max-md:border-b max-md:border-b-gray-300">
-                    <h4 className="font-heading font-extrabold text-5xl brand-text-gray">85%</h4>
-                    <p className="text-lg text-[#4D4D56] lg:text-lg md:text-base md:text-center">Successful placements</p>
+                    <h4 className="font-heading font-extrabold text-5xl brand-text-gray">Dozens</h4>
+                    <p className="text-lg text-[#4D4D56] lg:text-lg md:text-base md:text-center">of companies trusting Talent Sourze to build remote and overseas teams</p>
                 </div>
                 <div className="flex justify-center flex-col gap-3 items-center py-5 
                 md:w-[31%] md:px-5
                 max-md:w-full">
-                    <h4 className="font-heading font-extrabold text-5xl brand-text-gray">1,200</h4>
-                    <p className="text-lg text-[#4D4D56] lg:text-lg md:text-base md:text-center">Companies served</p>
+                    <h4 className="font-heading font-extrabold text-5xl brand-text-gray">100%</h4>
+                    <p className="text-lg text-[#4D4D56] lg:text-lg md:text-base md:text-center">committed to matching the right talent with the right role, every time </p>
                 </div>
             </div>
         </div>
