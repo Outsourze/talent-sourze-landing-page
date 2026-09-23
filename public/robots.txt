@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://talentsourze.com
+
+# Sitemaps
+Sitemap: https://talentsourze.com/sitemap.xml
